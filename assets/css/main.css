@@ -380,7 +380,7 @@ input[type=radio]:checked::after {
   display: flex;
   justify-content: space-between;
   align-items: center;
-  padding: 1.2em 10%;
+  padding: 1em 10%;
   color: #727171;
 }
 #apiKiwipin .container .result_info .item h1 {
@@ -393,7 +393,7 @@ input[type=radio]:checked::after {
 }
 #apiKiwipin .container .result_info .item h1.content .code_copy {
   vertical-align: middle;
-  margin-left: 1.5em;
+  margin-left: 1em;
   cursor: pointer;
   opacity: 0.6;
 }
@@ -419,6 +419,7 @@ input[type=radio]:checked::after {
   align-items: center;
   width: 100%;
   color: var(--primary);
+  font-size: 15px;
   font-weight: 600;
 }
 #apiKiwipin .container .result_info.error_info .item:first-child h1.content {
@@ -582,7 +583,7 @@ input[type=radio]:checked::after {
     flex-basis: 50vw;
   }
   #apiKiwipin .bgArea img {
-    width: 100%;
+    width: 40vw;
     bottom: 9vw;
     left: calc(50% - 20vw);
   }
@@ -660,7 +661,7 @@ input[type=radio]:checked::after {
 }
 @media (max-width: 767.98px) {
   #apiKiwipin .form-payment .form_list {
-    margin-top: 35px;
+    margin-top: 25px;
   }
   #apiKiwipin .form-payment .form_list span {
     font-size: 14px;
@@ -677,7 +678,7 @@ input[type=radio]:checked::after {
   #apiKiwipin .form-payment .form_bt {
     position: fixed;
     left: 0;
-    bottom: 10vw;
+    bottom: 7vw;
     width: 100%;
   }
 }

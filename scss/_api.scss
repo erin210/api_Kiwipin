@@ -404,8 +404,9 @@ input[type=radio] {
         display: flex;
         justify-content: space-between;
         align-items: center;
-        padding: 1.2em 10%;
+        padding: 1em 10%;
         color: $logo_grey;
+        // border-bottom: 1px solid $light_grey4;
         
         h1{
           
@@ -421,7 +422,7 @@ input[type=radio] {
               vertical-align: middle;
               // display: inline-block;
               // line-height: 2;
-              margin-left: 1.5em;
+              margin-left: 1em;
               cursor: pointer;
               // border: 1px solid #f00;
               opacity: .6;
@@ -447,6 +448,7 @@ input[type=radio] {
             align-items: center;
             width: 100%;
             color: var(--primary);
+            font-size: 15px;
             font-weight:600;
           }
         }
@@ -618,8 +620,8 @@ input[type=radio] {
     @include breakpoint('xs','max'){
       flex-basis: 50vw;
       img{
-        // width: 40vw;
-        width: 100%;
+        width: 40vw;
+        // width: 100%;
         // top: 60%;
         bottom: 9vw;
         left: calc(50% - 20vw);
@@ -700,7 +702,7 @@ input[type=radio] {
       }
       
       @include breakpoint('sm', 'max') {
-        margin-top: 35px;
+        margin-top: 25px;
         span{
         font-size: 14px;   
         }
@@ -715,7 +717,7 @@ input[type=radio] {
       @include breakpoint('sm', 'max'){
         position: fixed;
         left: 0;
-        bottom: 10vw;
+        bottom: 7vw;
         width: 100%;
       }
 
