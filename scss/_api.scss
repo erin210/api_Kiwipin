@@ -400,17 +400,7 @@ input[type=radio] {
         align-items: center;
         padding: 1.2em 10%;
         color: $logo_grey;
-        &:first-child{
-          background-color: $light_grey4;
-          height: 25px;
-          margin-bottom: .6em;
-          
-          @include border-radius(10px);
-          h1.content{
-            color: var(--primary);
-            font-weight:600;
-          }
-        }
+        
         h1{
           
           width: 100%;
@@ -421,11 +411,10 @@ input[type=radio] {
             flex-basis: 45%;
           }
           &.content{
-            
             .code_copy{
               vertical-align: middle;
               // display: inline-block;
-              line-height: 2;
+              // line-height: 2;
               margin-left: 1.5em;
               cursor: pointer;
               // border: 1px solid #f00;
@@ -435,6 +424,20 @@ input[type=radio] {
           }
           @include breakpoint('sm','max'){
             font-size: 14px;
+          }
+        }
+        &:first-child{
+          background-color: $light_grey4;
+          height: 25px;
+          margin-bottom: .6em;
+          
+          @include border-radius(10px);
+          h1.content{
+            display: flex;
+            align-items: center;
+            width: 100%;
+            color: var(--primary);
+            font-weight:600;
           }
         }
 
@@ -722,7 +725,7 @@ input[type=radio] {
         font-size: 14px;
         p{
           order:2;
-          margin-top: 1em;
+          margin-top: 1.3em;
         }
         .btn_blue{
           // width: 40%;
