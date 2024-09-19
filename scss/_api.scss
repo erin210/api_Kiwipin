@@ -15,7 +15,7 @@ body {
     justify-content: center;
     align-items: center;
     @include breakpoint('md', 'max'){
-      min-height: auto;
+      min-height: 0;
      }
 
   }

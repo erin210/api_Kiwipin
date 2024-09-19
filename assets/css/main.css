@@ -23,7 +23,7 @@ body.apiKiwiBody {
 }
 @media (max-width: 991.98px) {
   body.apiKiwiBody {
-    min-height: auto;
+    min-height: 0;
   }
 }
 body.addBG {
