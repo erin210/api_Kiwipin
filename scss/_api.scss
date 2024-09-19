@@ -259,7 +259,7 @@ input[type=radio] {
     // padding-left: 0;
   }
   @include breakpoint('xxs', 'max'){
-    height: auto;
+    height: 100%;
   }
 
   .container {
