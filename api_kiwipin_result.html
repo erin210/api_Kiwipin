@@ -39,8 +39,7 @@
     
     <div class="bgArea">
       <img src="./assets/img/logo2.svg" alt="">
-      <div class="ooo">
-      </div>
+      <div class="ooo"></div>
     </div>
     <input type="text" hidden id="hiddenInput" style="position:absolute; left:-9999px;">
   </div>
@@ -130,17 +129,16 @@
       //return true;
     }
     //code_cpoy
-    // 使用事件委託來處理動態添加的 .code_copy 元素
     $('.result_info').on('click', '.code_copy', async function() {
                 var contentText = $('.result_info .item:first-child').find('.content');
-                var originalText = contentText.text(); // 儲存原本的文字
+                var originalText = contentText.text(); //儲值密碼
 
                 try {
-                    // 使用 async/await 進行複製
+                    // 複製
                     await navigator.clipboard.writeText(originalText);
-                    contentText.text('複製成功！'); // 顯示成功提示
+                    contentText.text('複製成功！');
 
-                    // 500 毫秒後恢復原本的文字
+                    //恢復
                     setTimeout(function() {
                         contentText.html(originalText+'<span class="code_copy"><img src="./assets/img/icon_copy.svg" alt="copy"/></span>');
                     }, 1000);
@@ -148,12 +146,6 @@
                     console.error("複製失敗：", error);
                 }
             });
-
-            // 按鈕用於動態添加複製圖示
-            // $('#addCopyButton').on('click', function() {
-            //     $('.result_info .item:first-child').find('.content')
-            //         .append('<span class="code_copy"><img src="./assets/img/icon_copy.svg" alt="copy"/></span>');
-            // });
   </script>
 
   <script>
