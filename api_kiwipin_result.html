@@ -1,0 +1,166 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>P99Pay-receipt</title>
+  <script src="config.js"></script>
+  <script>
+    (function () {
+      var base = document.createElement('base');
+      base.href = window.pageBaseUrl;
+      document.head.appendChild(base);
+    })();
+  </script>
+  <script src="./assets/js/jquery-3.7.1.min.js"></script>
+  <link rel="stylesheet" href="./assets/css/reset.css">
+  <link rel="stylesheet" href="./assets/css/bootstrap-grid.css">
+  <link rel="stylesheet" href="./assets/css/select2.min.css" />
+  <link rel="stylesheet" href="./assets/css/main.css?v=20240611">
+  <script>
+    function initFunction(jsonObj) {
+      renderInfo(jsonObj);
+    }
+  </script>
+
+</head>
+
+<body class="apiKiwiBody">
+  <div id="apiKiwipin">
+    <div class="container">
+      <div class="result_message">
+        <img id="Notify_Icon" src="./assets/img/icon_sucess.svg" alt="">
+        <span id="Notify_Title">恭喜您！點卡購買成功</span>
+      </div>
+      <div class="result_info"></div>
+      <a id="confirm" href="api_kiwipin.html?activeTab=tab2" class="btn btn_blue result_btn">回購買點數</a>
+    </div>
+    
+    <div class="bgArea">
+      <img src="./assets/img/logo2.svg" alt="">
+      <div class="ooo">
+      </div>
+    </div>
+    <input type="text" hidden id="hiddenInput" style="position:absolute; left:-9999px;">
+  </div>
+
+  <script>
+    console.log(window.location.hostname);
+        console.log('Page Base URL:', pageBaseUrl);
+        console.log('API Base URL:', apiUrl);
+
+        $(function () {
+            $('base').attr('href', apiUrl);
+        });
+
+
+    function renderInfo(json) {
+
+      const dataSUCCESS={
+        "儲值密碼":json.PINCODE,
+        "商品名稱":json.PRODUCT_NAME,
+        "點卡序號":json.PIN_SERIAL,
+        "點卡啟用日":json.START_TIME,
+        "點卡到期日":json.EXPIRY_TIME,
+        "訂單狀態":json.RMSG_CHI
+      }
+      const dataERROR={
+        "訂單狀態":json.RMSG_CHI,
+        "商品名稱":json.PRODUCT_NAME
+      }
+
+      
+      if (json.PAY_STATUS == "S") {
+        $('#Notify_Icon').attr("src", "./assets/img/icon_success.svg");
+        $("#Notify_Title").text("恭喜您！點卡購買成功");
+        resultINFO(dataSUCCESS);
+        $('.result_info .item:first-child').find('.content').append('<span class="code_copy"><img  src="./assets/img/icon_copy.svg" alt="copy"/></span>');
+        $('.result_info').removeAttr('id', "ERROR_INFO");
+        $('.btn').hide();
+
+      } else {
+        $('#Notify_Icon').attr("src", "./assets/img/icon_error.svg");
+        $("#Notify_Title").text("交易失敗").css({ 'color': 'var(--error)' });
+        resultINFO(dataERROR);
+        $('.result_info').addClass('error_info');
+        $('.btn').show();
+      }
+
+      Object.keys(json).forEach(function (k) {
+        var eleName = '#' + k;
+        // console.log(eleName + ' - ' + json[k]);
+        if ($(eleName).length <= 0) {
+          appendElement_Input('#form', k, json[k]);
+        } else {
+          $(eleName).val(json[k]);
+        }
+      });
+
+    }
+
+    
+    //印資料
+    function resultINFO(data){
+        $(".result_info").empty();
+
+        Object.entries(data).forEach(([key, value]) => {
+          
+          
+          const htmlINFO = `
+            <div class="item">
+              <h1 class="title">${key}</h1>
+              <h1 class="content">${value}</h1>
+            </div>`;
+          $(".result_info").append(htmlINFO);
+
+        });
+      }
+
+    function appendElement_Input(ele, name, value) {
+      var textHtml = '<input type="hidden" name="' + name + '"';
+      textHtml += ' value="' + value + '"';
+      textHtml += '/>';
+      $(ele).append(textHtml);
+    }
+
+    function check_submit() {
+      document.getElementById('form').submit();
+
+      //return true;
+    }
+    //code_cpoy
+    // 使用事件委託來處理動態添加的 .code_copy 元素
+    $('.result_info').on('click', '.code_copy', async function() {
+                var contentText = $('.result_info .item:first-child').find('.content');
+                var originalText = contentText.text(); // 儲存原本的文字
+
+                try {
+                    // 使用 async/await 進行複製
+                    await navigator.clipboard.writeText(originalText);
+                    contentText.text('複製成功！'); // 顯示成功提示
+
+                    // 500 毫秒後恢復原本的文字
+                    setTimeout(function() {
+                        contentText.html(originalText+'<span class="code_copy"><img src="./assets/img/icon_copy.svg" alt="copy"/></span>');
+                    }, 1000);
+                } catch (error) {
+                    console.error("複製失敗：", error);
+                }
+            });
+
+            // 按鈕用於動態添加複製圖示
+            // $('#addCopyButton').on('click', function() {
+            //     $('.result_info .item:first-child').find('.content')
+            //         .append('<span class="code_copy"><img src="./assets/img/icon_copy.svg" alt="copy"/></span>');
+            // });
+  </script>
+
+  <script>
+
+    initFunction({ "PAY_STATUS": "S", "Tpye": "GET_PINCODE", "PINCODE": "ASDFREFDGBSFGB", "data": "data=eyJNU0dfVFlQRSI6IjAxMDAiLCJQQ09ERSI6IjMwMDAwMCIsIkNJRCI6IkMwMDAwNDAwMTAwMDEiLCJDT0lEIjoiUFAyMDI0MDkxMzExNDYzNTAwMjE0NiIsIkNVSUQiOiJVU0QiLCJQQUlEIjoiQ09QS1dQMDEiLCJBTU9VTlQiOiIxIiwiUkVUVVJOX1VSTCI6Imh0dHBzOlwvXC9zdGFnZS1hcGkucDk5cGF5LmNvbVwvS0lXSVwvcmV0dXJudXJsIiwiUFJPRFVDVF9JRCI6IiIsIlBST0RVQ1RfTkFNRSI6IktJV0kgXHU5MzIyXHU1MzA1IDEwMCBcdTllZGUiLCJVU0VSX0FDQ1RJRCI6IjE4IiwiVVNFUl9JUCI6IjExNC4zMi4xOS4yNTIiLCJNRU1PIjoiIiwiRVhURU5TSU9OIjoiIiwiRVJRQyI6IlVsM0xtMkw5YVFoVm5jZGpwd0FBaUlwS3NkST0ifQ%253D%253D", "CUID": "USD", "AMOUNT": "100", "PRODUCT_NAME": "怪獸彈珠遊戲-新手禮包", "Background": "" });
+
+  </script>
+</body>
+
+</html>
