@@ -5,7 +5,7 @@ body {
 
   font-family: "Noto Sans TC", "Inter", sans-serif;
   font-optical-sizing: auto;
-  font-weight: 200;
+  font-weight: 400;
   font-style: normal;
 
   &.apiKiwiBody {
@@ -296,7 +296,7 @@ input[type=radio] {
       width: 100%;
       margin-bottom: 35px;
       font-size: 28px;
-      font-weight: 400;
+      font-weight: 500;
       color: $text_grey2;
 
       @include breakpoint('sm', 'max') {
@@ -372,6 +372,8 @@ input[type=radio] {
     //result
     .result_message{
       text-align: center;
+
+      // border:1px solid #f00;
       span{
         width: 100%;
         font-size: 30px;
@@ -379,6 +381,7 @@ input[type=radio] {
         display: block;
         margin-top: .5em;
       }
+      
       @include breakpoint('md','max'){
         margin-top: 5vw;
       }
@@ -386,6 +389,9 @@ input[type=radio] {
         span{
           font-size: 24px;
           
+        }
+        #Notify_Icon{
+          width: 21vw;
         }
       }
     }
@@ -418,6 +424,10 @@ input[type=radio] {
               margin-left: 1.5em;
               cursor: pointer;
               // border: 1px solid #f00;
+              opacity: .6;
+              img{
+                height: 1.4em;
+              }
               
             }
             
@@ -608,9 +618,10 @@ input[type=radio] {
     @include breakpoint('xs','max'){
       flex-basis: 50vw;
       img{
-        width: 40vw;
+        // width: 40vw;
+        width: 100%;
         // top: 60%;
-        bottom: 2vw;
+        bottom: 9vw;
         left: calc(50% - 20vw);
       }
       .ooo{
@@ -763,8 +774,13 @@ input[type=radio] {
           color: var(--primary);
           margin-right: 5px;
 
-          @include breakpoint('sm', 'max') {
+          
+        }
+        @include breakpoint('sm', 'max') {
+          font-size: 14px;
+          span{
             font-size: 38px;
+
           }
         }
       }

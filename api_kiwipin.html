@@ -169,14 +169,14 @@
 
         function check_U_EMAIL() {
             if ($('#U_EMAIL').val() == "") {
-                $('.email_msg_text').text("需要輸入 EMail");
+                $('.email_msg_text').text("需要輸入 Email");
                 $('.email_msg').show();
                 $('#U_EMAIL').focus().attr('aria-invalid', 'true').addClass('input_error');
                 return false;
             }
 
             if (!IsEmail($('#U_EMAIL').val())) {
-                $('.email_msg_text').text("無效的 EMail");
+                $('.email_msg_text').text("無效的 Email");
                 $('.email_msg').show();
                 $('#U_EMAIL').focus().attr('aria-invalid', 'true').addClass('input_error');
                 return false;
