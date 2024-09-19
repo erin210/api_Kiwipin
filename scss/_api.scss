@@ -285,7 +285,7 @@ input[type=radio] {
       justify-content: flex-start;
       // padding-top: 24vw;
     padding: 0 15px;
-    padding-top: 30px;
+    padding-top: 50px;
     }
     @include breakpoint('xxs', 'max'){
       // height: 72vh;
@@ -295,7 +295,7 @@ input[type=radio] {
       display: flex;
       justify-content: center;
       width: 100%;
-      margin: 35px 0;
+      margin-bottom: 35px;
       font-size: 28px;
       font-weight: 400;
       color: $text_grey2;
@@ -304,7 +304,7 @@ input[type=radio] {
         font-size: 18px;
       }
       @include breakpoint('xxs', 'max') {
-        margin: 1.5em 0;
+        margin-bottom: 1.5em;
       }
 
       div.tab {
