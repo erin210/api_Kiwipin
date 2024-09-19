@@ -247,10 +247,10 @@ input[type=radio] {
   // padding-left: 14vw;
   overflow: hidden;
   // border: 1px solid #f00;
-  @include breakpoint('xl','max'){
-    // padding-left: 0;
+  // @include breakpoint('xl','max'){
+  //   // padding-left: 0;
 
-  }
+  // }
 
   @include breakpoint('md','max'){
     flex-direction: column;
