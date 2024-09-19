@@ -186,13 +186,13 @@
 
         function check_U_PINCODE() {
             if ($('#U_PINCODE').val() == "") {
-                $('.pincode_msg_text').text("請填寫驗證碼");
+                $('.pincode_msg_text').text("請填寫儲值密碼");
                 $('.pincode_msg').show();
                 $('#U_PINCODE').focus().attr('aria-invalid', 'true').addClass('input_error');
                 return false;
             }
             if (!IsPincode($('#U_PINCODE').val())) {
-                $('.pincode_msg_text').text("無效的驗證碼");
+                $('.pincode_msg_text').text("無效的儲值密碼");
                 $('.pincode_msg').show();
                 $('#U_PINCODE').focus().attr('aria-invalid', 'true').addClass('input_error');
                 $('#U_PINCODE');
