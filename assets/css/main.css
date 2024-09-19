@@ -272,7 +272,7 @@ input[type=radio]:checked::after {
   #apiKiwipin .container {
     justify-content: flex-start;
     padding: 0 15px;
-    padding-top: 30px;
+    padding-top: 20px;
   }
 }
 @media (max-width: 375px) {
@@ -284,7 +284,7 @@ input[type=radio]:checked::after {
   display: flex;
   justify-content: center;
   width: 100%;
-  margin-bottom: 35px;
+  margin-bottom: 25px;
   font-size: 28px;
   font-weight: 500;
   color: #A5A5A5;
@@ -296,7 +296,7 @@ input[type=radio]:checked::after {
 }
 @media (max-width: 375px) {
   #apiKiwipin .container .tabs {
-    margin-bottom: 1.5em;
+    margin-bottom: 1.2em;
   }
 }
 #apiKiwipin .container .tabs div.tab {
@@ -362,10 +362,10 @@ input[type=radio]:checked::after {
 }
 @media (max-width: 575.98px) {
   #apiKiwipin .container .result_message span {
-    font-size: 24px;
+    font-size: 20px;
   }
   #apiKiwipin .container .result_message #Notify_Icon {
-    width: 21vw;
+    width: 17vw;
   }
 }
 #apiKiwipin .container .result_info {

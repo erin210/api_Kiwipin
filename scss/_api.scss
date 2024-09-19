@@ -284,7 +284,7 @@ input[type=radio] {
       justify-content: flex-start;
       // padding-top: 24vw;
     padding: 0 15px;
-    padding-top: 30px;
+    padding-top: 20px;
     }
     @include breakpoint('xxs', 'max'){
       // height: 72vh;
@@ -294,7 +294,7 @@ input[type=radio] {
       display: flex;
       justify-content: center;
       width: 100%;
-      margin-bottom: 35px;
+      margin-bottom: 25px;
       font-size: 28px;
       font-weight: 500;
       color: $text_grey2;
@@ -303,7 +303,7 @@ input[type=radio] {
         font-size: 18px;
       }
       @include breakpoint('xxs', 'max') {
-        margin-bottom: 1.5em;
+        margin-bottom: 1.2em;
       }
 
       div.tab {
@@ -387,11 +387,10 @@ input[type=radio] {
       }
       @include breakpoint('xs','max'){
         span{
-          font-size: 24px;
-          
+          font-size: 20px;
         }
         #Notify_Icon{
-          width: 21vw;
+          width: 17vw;
         }
       }
     }
