@@ -23,6 +23,7 @@ body.apiKiwiBody {
 }
 @media (max-width: 991.98px) {
   body.apiKiwiBody {
+    display: block;
     min-height: 0;
   }
 }
@@ -216,6 +217,7 @@ input[type=radio]:checked::after {
 }
 .btn.result_btn {
   margin: 0 auto;
+  margin-bottom: 30px;
 }
 .btn:hover {
   background-color: var(--primary);
@@ -238,7 +240,8 @@ input[type=radio]:checked::after {
   #apiKiwipin {
     flex-direction: column;
     justify-content: flex-start;
-    height: 100vh;
+    height: auto;
+    overflow-y: auto;
   }
 }
 @media (max-width: 575.98px) {
@@ -291,6 +294,7 @@ input[type=radio]:checked::after {
 }
 @media (max-width: 767.98px) {
   #apiKiwipin .container .tabs {
+    margin-bottom: 4vw;
     font-size: 18px;
   }
 }
@@ -431,7 +435,6 @@ input[type=radio]:checked::after {
   align-self: center;
   width: 100%;
   height: 100vh;
-  flex-basis: 35%;
   padding-left: 3.5vw;
 }
 #apiKiwipin .bgArea img {
@@ -522,29 +525,30 @@ input[type=radio]:checked::after {
     max-width: 100%;
     margin-left: 0;
     padding-left: 0;
+    min-height: 25vh;
   }
   #apiKiwipin .bgArea img {
-    width: 30vw;
+    width: 21vw;
     top: inherit;
-    bottom: 0;
-    left: calc(50% - 15vw);
+    bottom: calc(50% - 8vw);
+    left: calc(50% - 10.5vw);
   }
   #apiKiwipin .bgArea .ooo {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: 15vw;
+    bottom: 10vw;
     width: 150vw;
     height: 150vw;
   }
   #apiKiwipin .bgArea .ooo::before {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: -7.5vw;
+    bottom: -4.5vw;
   }
   #apiKiwipin .bgArea .ooo::after {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: -15vw;
+    bottom: -9vw;
   }
 }
 @media (max-width: 767.98px) {
@@ -556,26 +560,26 @@ input[type=radio]:checked::after {
     padding-left: 0;
   }
   #apiKiwipin .bgArea img {
-    width: 220px;
-    bottom: 5vw;
-    left: calc(50% - 110px);
+    width: 24vw;
+    bottom: calc(50% - 11vw);
+    left: calc(50% - 12vw);
   }
   #apiKiwipin .bgArea .ooo {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: 20vw;
+    bottom: 10vw;
     width: 150vw;
     height: 150vw;
   }
   #apiKiwipin .bgArea .ooo::before {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: -10vw;
+    bottom: -6vw;
   }
   #apiKiwipin .bgArea .ooo::after {
     top: inherit;
     left: calc(50% - 75vw);
-    bottom: -20vw;
+    bottom: -12vw;
   }
 }
 @media (max-width: 575.98px) {
@@ -590,6 +594,7 @@ input[type=radio]:checked::after {
   #apiKiwipin .bgArea .ooo {
     top: inherit;
     left: calc(50% - 75vw);
+    bottom: 20vw;
     width: 150vw;
     height: 150vw;
   }
@@ -629,6 +634,11 @@ input[type=radio]:checked::after {
     top: inherit;
     left: calc(50% - 75vw);
     bottom: -20vw;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .bgArea {
+    display: none;
   }
 }
 #apiKiwipin .error {
@@ -672,13 +682,11 @@ input[type=radio]:checked::after {
   justify-content: space-between;
   align-items: center;
   font-size: 18px;
-  margin-top: 50px;
+  margin-top: 4vw;
+  margin-bottom: 30px;
 }
 @media (max-width: 767.98px) {
   #apiKiwipin .form-payment .form_bt {
-    position: fixed;
-    left: 0;
-    bottom: 7vw;
     width: 100%;
   }
 }
