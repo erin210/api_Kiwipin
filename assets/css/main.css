@@ -303,6 +303,12 @@ input[type=radio]:checked::after {
     margin-bottom: 1.2em;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .container .tabs {
+    font-size: 20px;
+    margin-bottom: 20px;
+  }
+}
 #apiKiwipin .container .tabs div.tab {
   position: relative;
   display: flex;
@@ -668,6 +674,11 @@ input[type=radio]:checked::after {
 #apiKiwipin .form-payment .form_list span.wrong_msg {
   font-size: 14px;
   font-weight: normal;
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .form-payment .form_list span {
+    font-size: 14px;
+  }
 }
 @media (max-width: 767.98px) {
   #apiKiwipin .form-payment .form_list {

@@ -12,8 +12,8 @@ const environment = {
       apiBaseUrl: 'https://erin210.github.io/api_Kiwipin/',
     },
     localhost: {
-      pageBaseUrl: 'http://127.0.0.1:5501/',
-      apiBaseUrl: 'http://127.0.0.1:5501/',
+      pageBaseUrl: 'http://127.0.0.1:5502/',
+      apiBaseUrl: 'http://127.0.0.1:5502/',
     },
   };
   
