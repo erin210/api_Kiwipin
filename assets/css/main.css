@@ -245,7 +245,13 @@ input[type=radio]:checked::after {
   justify-content: center;
   align-items: center;
   width: 100%;
+  padding-left: 10vw;
   overflow: hidden;
+}
+@media (max-width: 1199.98px) {
+  #apiKiwipin {
+    padding-left: 0;
+  }
 }
 @media (max-width: 991.98px) {
   #apiKiwipin {
@@ -266,12 +272,14 @@ input[type=radio]:checked::after {
   justify-content: center;
   max-width: 770px;
   height: 100%;
-  padding: 0 40px;
+  padding-right: 70px;
   box-sizing: border-box;
 }
 @media (max-width: 1199.98px) {
   #apiKiwipin .container {
     max-width: 90%;
+    padding-right: 40px;
+    padding-left: 40px;
   }
 }
 @media (max-width: 991.98px) {
@@ -478,12 +486,14 @@ input[type=radio]:checked::after {
   align-self: center;
   width: 100%;
   height: 100vh;
+  flex-basis: 40%;
   padding-left: 3.5vw;
 }
 #apiKiwipin .bgArea img {
   position: absolute;
   top: calc(50% - 145px);
   z-index: 9;
+  filter: drop-shadow(3px 3px 3px rgba(0, 0, 0, 0.2));
 }
 #apiKiwipin .bgArea .ooo {
   position: absolute;
@@ -606,6 +616,7 @@ input[type=radio]:checked::after {
     width: 24vw;
     bottom: calc(50% - 11vw);
     left: calc(50% - 12vw);
+    filter: drop-shadow(2px 2px 3px rgba(0, 0, 0, 0.2));
   }
   #apiKiwipin .bgArea .ooo {
     top: inherit;
