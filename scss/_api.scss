@@ -79,6 +79,9 @@ select {
   @include breakpoint('sm', 'max'){
    font-size: 12px;
   }
+  @media screen and (max-device-width: 932px) and (orientation: landscape){
+    font-size: 12px;
+  }
 }
 
 input[readonly],
@@ -110,6 +113,9 @@ input:disabled {
   @include breakpoint('sm', 'max'){
     font-size: 14px;
    }
+   @media screen and (max-device-width: 932px) and (orientation: landscape){
+    font-size: 14px;
+  }
 }
 
 .wrong_msg img {
@@ -238,6 +244,7 @@ input[type=radio] {
   @include breakpoint('sm', 'max') {
     font-size: 14px;
   }
+  
 }
 
 
@@ -293,6 +300,9 @@ input[type=radio] {
     @include breakpoint('xxs', 'max'){
       // height: 72vh;
       padding-top: 0;
+    }
+    @media screen and (max-device-width: 932px) and (orientation: landscape){
+      max-width: 70%;
     }
     .tabs {
       display: flex;
@@ -403,11 +413,26 @@ input[type=radio] {
           width: 17vw;
         }
       }
+      @media screen and (max-device-width: 932px) and (orientation: landscape){
+        margin-top: 0;
+        span{
+          font-size: 20px;
+
+        }
+        #Notify_Icon{
+          width: 66px;
+
+        }
+      }
     }
     .result_info{
       margin: 70px 0;
       @include breakpoint('sm','max'){
         margin: 10vw 0;
+      }
+      @media screen and (max-device-width: 932px) and (orientation: landscape){
+
+      margin: 30px 0;
       }
        .item{
         display: flex;
@@ -443,6 +468,9 @@ input[type=radio] {
             
           }
           @include breakpoint('sm','max'){
+            font-size: 14px;
+          }
+          @media screen and (max-device-width: 932px) and (orientation: landscape){
             font-size: 14px;
           }
         }
@@ -740,6 +768,7 @@ input[type=radio] {
         // bottom: 7vw;
         width: 100%;
       }
+      
 
       p{
         color: $text_grey2;
@@ -763,6 +792,17 @@ input[type=radio] {
         .btn_blue{
           // width: 40%;
           order: 1;
+        }
+      }
+      @media screen and (max-device-width: 932px) and (orientation: landscape){
+        margin-top: 3vw;
+        p{
+          font-size: 14px;
+        }
+        .btn_blue{
+          width: 15em;
+          font-size: 14px;
+
         }
       }
 
@@ -805,6 +845,12 @@ input[type=radio] {
             font-size: 38px;
           }
         }
+        @media screen and (max-device-width: 932px) and (orientation: landscape){
+          font-size: 14px;
+          span{
+            font-size: 38px;
+          }
+        }
       }
 
       .product_name {
@@ -814,6 +860,9 @@ input[type=radio] {
         margin-top: .8em;
 
         @include breakpoint('sm', 'max') {
+          font-size: 14px;
+        }
+        @media screen and (max-device-width: 932px) and (orientation: landscape){
           font-size: 14px;
         }
       }

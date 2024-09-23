@@ -86,6 +86,12 @@ select::placeholder {
     font-size: 12px;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  input,
+  select {
+    font-size: 12px;
+  }
+}
 
 input[readonly],
 input:disabled {
@@ -115,6 +121,11 @@ input:disabled {
   align-items: center;
 }
 @media (max-width: 767.98px) {
+  .wrong_msg {
+    font-size: 14px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
   .wrong_msg {
     font-size: 14px;
   }
@@ -283,6 +294,11 @@ input[type=radio]:checked::after {
     padding-top: 0;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .container {
+    max-width: 70%;
+  }
+}
 #apiKiwipin .container .tabs {
   display: flex;
   justify-content: center;
@@ -378,12 +394,28 @@ input[type=radio]:checked::after {
     width: 17vw;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .container .result_message {
+    margin-top: 0;
+  }
+  #apiKiwipin .container .result_message span {
+    font-size: 20px;
+  }
+  #apiKiwipin .container .result_message #Notify_Icon {
+    width: 66px;
+  }
+}
 #apiKiwipin .container .result_info {
   margin: 70px 0;
 }
 @media (max-width: 767.98px) {
   #apiKiwipin .container .result_info {
     margin: 10vw 0;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .container .result_info {
+    margin: 30px 0;
   }
 }
 #apiKiwipin .container .result_info .item {
@@ -411,6 +443,11 @@ input[type=radio]:checked::after {
   height: 1.4em;
 }
 @media (max-width: 767.98px) {
+  #apiKiwipin .container .result_info .item h1 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiKiwipin .container .result_info .item h1 {
     font-size: 14px;
   }
@@ -726,6 +763,18 @@ input[type=radio]:checked::after {
     order: 1;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .form-payment .form_bt {
+    margin-top: 3vw;
+  }
+  #apiKiwipin .form-payment .form_bt p {
+    font-size: 14px;
+  }
+  #apiKiwipin .form-payment .form_bt .btn_blue {
+    width: 15em;
+    font-size: 14px;
+  }
+}
 #apiKiwipin .tab_container .point_info {
   width: 100%;
   padding: 35px;
@@ -762,6 +811,14 @@ input[type=radio]:checked::after {
     font-size: 38px;
   }
 }
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiKiwipin .tab_container .point_info .point_amount {
+    font-size: 14px;
+  }
+  #apiKiwipin .tab_container .point_info .point_amount span {
+    font-size: 38px;
+  }
+}
 #apiKiwipin .tab_container .point_info .product_name {
   font-size: 22px;
   font-weight: bold;
@@ -769,6 +826,11 @@ input[type=radio]:checked::after {
   margin-top: 0.8em;
 }
 @media (max-width: 767.98px) {
+  #apiKiwipin .tab_container .point_info .product_name {
+    font-size: 14px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiKiwipin .tab_container .point_info .product_name {
     font-size: 14px;
   }
