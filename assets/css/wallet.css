@@ -592,6 +592,7 @@ input[type=radio]:checked::after {
     bottom: 0;
     padding-top: 0.5em;
     padding-bottom: 0.8em;
+    padding-right: 0;
     background-color: #000000;
     box-sizing: border-box;
     display: block;
