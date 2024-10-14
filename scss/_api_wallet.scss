@@ -435,7 +435,7 @@ input[type=radio] {
               margin-right: 0;
               font-size: 1px;
               // @include shadow_stroke(0.5px, -0.5px, $dark);
-              background: url(/assets/img/icon_add_m.svg)no-repeat center center;
+              background: url(#{$img-path}icon_add_m.svg)no-repeat center center;
               background-size: cover;
               img{
                 opacity: 0;
