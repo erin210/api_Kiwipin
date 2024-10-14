@@ -422,7 +422,7 @@ input[type=radio] {
               filter: invert(100%);
             }
             @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
-              width: 20px !important;
+              width: 16px !important;
               margin-right: 0;
               @include shadow_stroke(0.001px, -0.001px, $dark);
             }
@@ -464,7 +464,7 @@ input[type=radio] {
               &::before{
                 content: "";
                 position: absolute;
-                left: -49px;
+                left: -50px;
                 width: 100px;
                 height: 100px;
                 background-color: $dark;

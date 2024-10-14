@@ -401,7 +401,7 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container aside .tabs div.tab .imgbox {
-    width: 20px !important;
+    width: 16px !important;
     margin-right: 0;
     filter: drop-shadow(0.001px 0 0 #000000) drop-shadow(0 0.001px 0 #000000) drop-shadow(0 -0.001px 0 #000000) drop-shadow(-0.001px 0 0 #000000);
   }
@@ -444,7 +444,7 @@ input[type=radio]:checked::after {
 #apiWallet .container aside .tabs div.tab.active i::before {
   content: "";
   position: absolute;
-  left: -49px;
+  left: -50px;
   width: 100px;
   height: 100px;
   background-color: #000000;
