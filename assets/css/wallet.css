@@ -313,18 +313,18 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px) {
   #apiWallet .container aside .logo {
-    margin-top: 40px;
+    margin-top: 50px;
     padding-top: 0;
   }
   #apiWallet .container aside .logo img {
-    max-width: 38%;
+    max-width: 34%;
     margin-left: auto;
     margin-right: auto;
   }
 }
 @media screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container aside .logo {
-    margin-top: 40px;
+    margin-top: 30px;
     padding-top: 0;
   }
   #apiWallet .container aside .logo img {
@@ -348,7 +348,7 @@ input[type=radio]:checked::after {
   #apiWallet .container aside .tabs {
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 20px;
+    margin-top: 10px;
     padding: 0 15vw;
   }
 }
@@ -401,8 +401,9 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container aside .tabs div.tab .imgbox {
-    width: 14px !important;
+    width: 20px !important;
     margin-right: 0;
+    filter: drop-shadow(0.001px 0 0 #000000) drop-shadow(0 0.001px 0 #000000) drop-shadow(0 -0.001px 0 #000000) drop-shadow(-0.001px 0 0 #000000);
   }
 }
 #apiWallet .container aside .tabs div.tab i {
@@ -432,17 +433,18 @@ input[type=radio]:checked::after {
 #apiWallet .container aside .tabs div.tab.active i {
   display: block;
   position: absolute;
-  right: 0;
+  right: -1px;
   width: 50px;
   height: 50px;
   background-color: #F8F8F6;
   display: block;
   overflow: hidden;
+  border-right: 1px solid #F8F8F6;
 }
 #apiWallet .container aside .tabs div.tab.active i::before {
   content: "";
   position: absolute;
-  left: -50px;
+  left: -49px;
   width: 100px;
   height: 100px;
   background-color: #000000;
@@ -450,12 +452,14 @@ input[type=radio]:checked::after {
 }
 #apiWallet .container aside .tabs div.tab.active i.oo1 {
   top: -50px;
+  border-bottom: 1px solid #F8F8F6;
 }
 #apiWallet .container aside .tabs div.tab.active i.oo1::before {
   top: -50px;
 }
 #apiWallet .container aside .tabs div.tab.active i.oo2 {
   bottom: -50px;
+  border-top: 1px solid #F8F8F6;
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container aside .tabs div.tab.active i {
@@ -490,6 +494,8 @@ input[type=radio]:checked::after {
   #apiWallet .container aside .tabs div.tab.active i.oo2 {
     bottom: -2px;
     right: -30px;
+    border-top: 0;
+    border-right: 0;
     border-left: 2px solid #F8F8F6;
     border-bottom: 2px solid #F8F8F6;
   }
@@ -514,7 +520,7 @@ input[type=radio]:checked::after {
   #apiWallet .container .tab_container {
     width: 100%;
     height: auto;
-    margin-bottom: 40px;
+    margin-bottom: 30px;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -545,15 +551,17 @@ input[type=radio]:checked::after {
     position: absolute;
     top: 0;
     right: 0;
+    width: 100%;
     color: #F8F8F6;
     background-color: #252424;
     border-radius: 0 0 10px 10px;
     border: 0;
     padding: 0.5em 1em;
     font-size: 12px;
+    box-sizing: border-box;
   }
 }
-#apiWallet .container .copy_right {
+#apiWallet .container .email_info {
   width: 24%;
   position: absolute;
   left: 0;
@@ -561,25 +569,30 @@ input[type=radio]:checked::after {
   color: #fff;
   text-align: right;
   padding-right: 2em;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: 200;
   box-sizing: border-box;
 }
 @media (max-width: 1199.98px) {
-  #apiWallet .container .copy_right {
+  #apiWallet .container .email_info {
     left: 40px;
     width: 24%;
     font-size: 0.8rem;
   }
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
-  #apiWallet .container .copy_right {
+  #apiWallet .container .email_info {
     position: fixed;
+    left: 0;
+    z-index: 99 !important;
     width: 100%;
-    z-index: -1;
-    left: inherit;
     text-align: center;
-    bottom: 10px;
+    bottom: 0;
+    padding-top: 0.5em;
+    padding-bottom: 0.8em;
+    background-color: #000000;
+    box-sizing: border-box;
+    display: block;
   }
 }
 #apiWallet .container .result_message {
@@ -829,7 +842,7 @@ input[type=radio]:checked::after {
   cursor: pointer;
 }
 #apiWallet .form-payment .form_bt .btn_blue {
-  width: 27%;
+  width: 170px;
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .form-payment .form_bt {
@@ -841,6 +854,7 @@ input[type=radio]:checked::after {
     margin-top: 1.3em;
   }
   #apiWallet .form-payment .form_bt .btn_blue {
+    width: 25vw;
     order: 1;
   }
 }

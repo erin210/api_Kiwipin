@@ -114,7 +114,13 @@
         -webkit-box-shadow: $s $b $b*1.2 rgba(0, 0, 0, .2);
         box-shadow: $s $b $b*1.2 rgba(0, 0, 0, .2);
     }
-    
+    @mixin shadow_stroke($s1, $s2, $color){
+        filter: drop-shadow($s1 0 0 $color)
+                drop-shadow(0 $s1 0 $color)
+                drop-shadow(0 $s2 0 $color)
+                drop-shadow($s2 0 0 $color);//右下左上
+    }//@include shadow_stroke(0.001px, -0.001px, $dark);
+
     @mixin photo_center() {
         display: block;
         text-align: center;
