@@ -273,7 +273,18 @@ input[type=radio]:checked::after {
     padding-top: 20px;
   }
 }
-@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+@media screen and (max-width: 767px) {
+  #apiWallet .container {
+    max-width: 100%;
+    height: calc(100vh - 30px);
+    overflow-y: auto;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container {
     max-width: 100%;
     height: 100%;
@@ -297,7 +308,6 @@ input[type=radio]:checked::after {
   #apiWallet .container aside {
     position: inherit;
     width: 100%;
-    height: 30%;
   }
 }
 #apiWallet .container aside .logo {
@@ -319,7 +329,7 @@ input[type=radio]:checked::after {
     padding-top: 0;
   }
   #apiWallet .container aside .logo img {
-    max-width: 34%;
+    max-width: 127px;
     margin-left: auto;
     margin-right: auto;
   }
@@ -521,12 +531,16 @@ input[type=radio]:checked::after {
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container .tab_container {
     width: 100%;
-    height: auto;
-    margin-bottom: calc(30px - env(safe-area-inset-bottom));
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
     border-radius: 10px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .tab_container {
+    margin-bottom: 30px;
+    height: auto;
   }
 }
 #apiWallet .container .tab_container .loginBar {
@@ -833,8 +847,19 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .form-payment .form_bt {
-    margin-top: 5%;
-    width: 100%;
+    position: absolute;
+    right: 5vw;
+    bottom: 7vw;
+  }
+}
+@media screen and (max-width: 767px) {
+  #apiWallet .form-payment .form_bt {
+    right: 9vw;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_bt {
+    position: inherit;
   }
 }
 #apiWallet .form-payment .form_bt p {
