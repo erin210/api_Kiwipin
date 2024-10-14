@@ -53,7 +53,7 @@ select {
 
   /*firefox*/
   padding: 1.2em;
-  border: 0;
+  border: 1px solid transparent;
   border-radius: 10px;
   margin-top: 14px;
   background-color: $light_grey4;
@@ -87,6 +87,9 @@ input:disabled {
   background-color: $light_grey4;
   border: 0;
 }
+// input:focus{
+//   border: 1px solid $error;
+// }
 
 small{
   .icon{
