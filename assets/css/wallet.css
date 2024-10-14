@@ -1,0 +1,832 @@
+@charset "UTF-8";
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
+:root {
+  --primary:#8FB0DC;
+  --second:#EFEFEF;
+  --error:#DC8F8F;
+  --bg-image: url("");
+  --bg-image-mobile: url("");
+}
+
+body {
+  font-family: "Noto Sans TC", "Inter", sans-serif;
+  font-optical-sizing: auto;
+  font-weight: 400;
+  font-style: normal;
+  font-size: 100%;
+}
+body.walletBody {
+  background-color: #000000;
+  min-height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  body.walletBody {
+    display: block;
+  }
+}
+
+.title h2 {
+  font-weight: 400;
+  font-size: 20px;
+  color: var(--primary);
+  line-height: 1.5;
+  margin-bottom: 0.4em;
+}
+.title p {
+  color: var(--primary);
+  font-size: 18px;
+}
+
+label {
+  color: #A5A5A5;
+  font-size: 14px;
+}
+
+input,
+select {
+  font-size: 18px;
+  font-weight: 200;
+  width: -webkit-fill-available;
+  width: -moz-available;
+  color: #727171;
+  /*firefox*/
+  padding: 1.2em;
+  border: 1px solid #D6D6D6;
+  border-radius: 10px;
+  margin-top: 14px;
+  background-color: transparent;
+  margin-right: 0;
+}
+input.input_error:focus-visible,
+select.input_error:focus-visible {
+  appearance: none;
+}
+input.input_error:focus, input.input_error:focus-visible,
+select.input_error:focus,
+select.input_error:focus-visible {
+  outline: none;
+  /* 移除預設的 focus 樣式 */
+  border-color: var(--error);
+}
+input::placeholder,
+select::placeholder {
+  color: #D6D6D6;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  input,
+  select {
+    font-size: 12px;
+  }
+}
+
+input[readonly],
+input:disabled {
+  color: #D6D6D6 !important;
+  -webkit-text-fill-color: #D6D6D6 !important;
+  background-color: #EFEFEF;
+  border: 0;
+}
+
+.text_visible {
+  position: relative;
+}
+
+.text_visible .eye {
+  position: absolute;
+  width: 1.5rem;
+  right: 1.5rem;
+  cursor: pointer;
+}
+
+.wrong_msg {
+  font-size: 16px;
+  font-weight: 300;
+  padding: 0.5rem 0 1.2rem;
+  color: var(--error);
+  display: flex;
+  align-items: center;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  .wrong_msg {
+    font-size: 14px;
+  }
+}
+
+.wrong_msg img {
+  width: 1rem;
+  margin-right: 0.3rem;
+}
+
+input[type=radio] {
+  background-color: #A5A5A5;
+  appearance: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+}
+input[type=radio]:after {
+  width: 12px;
+  height: 12px;
+  border-radius: 50px;
+  top: 1px;
+  left: 1px;
+  position: relative;
+  background-color: #fff;
+  content: "";
+  display: inline-block;
+  visibility: visible;
+  border: 3px solid white;
+}
+input[type=radio]:checked {
+  background-color: var(--primary);
+}
+input[type=radio]:checked::after {
+  background-color: var(--primary);
+}
+
+.custom-checkbox {
+  position: relative;
+}
+.custom-checkbox input[type=checkbox] {
+  display: none;
+}
+.custom-checkbox label {
+  position: relative;
+  padding-left: 24px;
+  cursor: pointer;
+  user-select: none;
+}
+.custom-checkbox label::before {
+  content: "";
+  position: absolute;
+  top: 3px;
+  left: 0;
+  width: 15px;
+  height: 15px;
+  border: 1px solid #D6D6D6;
+  border-radius: 5px;
+  background-color: white;
+  transition: background-color 0.3s ease, border-color 0.3s ease;
+}
+.custom-checkbox label::after {
+  content: "";
+  position: absolute;
+  display: none;
+  top: 5px;
+  left: 6px;
+  width: 4px;
+  height: 8px;
+  border: solid white;
+  border-width: 0 2px 2px 0;
+  transform: rotate(45deg);
+}
+.custom-checkbox input[type=checkbox]:checked + label::before {
+  background-color: var(--primary);
+  border-color: var(--primary);
+}
+.custom-checkbox input[type=checkbox]:checked + label::after {
+  display: block;
+}
+
+.btn {
+  width: 50%;
+  color: #fff;
+  padding: 1.2em 2em;
+  border: none;
+  outline: none;
+  border-radius: 50px;
+  box-sizing: border-box;
+  font-size: 20px;
+  cursor: pointer;
+  text-decoration: none;
+  text-align: center;
+  -webkit-transition: all 0.3s ease-in-out;
+  -moz-transition: all 0.3s ease-in-out;
+  -ms-transition: all 0.3s ease-in-out;
+  -o-transition: all 0.3s ease-in-out;
+}
+.btn.btn_blue {
+  background-color: var(--primary);
+}
+.btn.result_btn {
+  margin: 0 auto;
+  margin-bottom: 30px;
+}
+.btn:hover {
+  background-color: var(--primary);
+  filter: brightness(1.1);
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  .btn {
+    font-size: 14px;
+  }
+}
+
+#apiWallet {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  width: 100%;
+  overflow: hidden;
+}
+@media (max-width: 1199.98px) {
+  #apiWallet {
+    padding-left: 0;
+  }
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet {
+    display: block;
+  }
+}
+@media (max-width: 575.98px) {
+  #apiWallet {
+    height: 100%;
+  }
+}
+#apiWallet .container {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  width: 100%;
+  height: 100%;
+  box-sizing: border-box;
+}
+@media (max-width: 1199.98px) {
+  #apiWallet .container {
+    max-width: 100%;
+    padding-right: 20px;
+    padding-left: 20px;
+  }
+}
+@media (max-width: 991.98px) {
+  #apiWallet .container {
+    justify-content: flex-start;
+    order: 2;
+    max-width: 100%;
+    padding-top: 20px;
+  }
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container {
+    max-width: 100%;
+    flex-direction: column;
+    justify-content: flex-start;
+    padding: 0 15px;
+    padding-top: 20px;
+  }
+}
+@media (max-width: 375px) {
+  #apiWallet .container {
+    padding-top: 0;
+  }
+}
+#apiWallet .container aside {
+  position: relative;
+  width: 26%;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside {
+    position: inherit;
+    width: 100%;
+    height: 30%;
+  }
+}
+#apiWallet .container aside .logo {
+  z-index: 9;
+  display: block;
+  width: 100%;
+  padding: 10px;
+  padding-top: 50px;
+  text-align: center;
+  box-sizing: border-box;
+}
+#apiWallet .container aside .logo img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 767px) {
+  #apiWallet .container aside .logo {
+    margin-top: 40px;
+    padding-top: 0;
+  }
+  #apiWallet .container aside .logo img {
+    max-width: 38%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .logo {
+    margin-top: 40px;
+    padding-top: 0;
+  }
+  #apiWallet .container aside .logo img {
+    max-width: 17%;
+    margin-left: auto;
+    margin-right: auto;
+  }
+}
+#apiWallet .container aside .tabs {
+  display: flex;
+  flex-direction: column;
+  align-items: end;
+  width: 100%;
+  margin-top: 50px;
+  font-size: 22px;
+  font-weight: 400;
+  color: #A5A5A5;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs {
+    flex-direction: row;
+    justify-content: flex-start;
+    margin-top: 20px;
+    padding: 0 15vw;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs {
+    font-size: 18px;
+  }
+}
+#apiWallet .container aside .tabs div.tab {
+  position: relative;
+  display: flex;
+  align-items: center;
+  width: 100%;
+  padding: 1.5em;
+  text-align: center;
+  border-radius: 50px 0 0 50px;
+  cursor: pointer;
+  box-sizing: border-box;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs div.tab {
+    width: auto;
+    padding: 1.5em;
+    padding-bottom: 3.5em;
+    margin: 0 1em;
+    margin-bottom: -2px;
+    font-size: 14px;
+    border-radius: 50px 50px 0 0;
+    border-bottom: 2px solid #fff;
+  }
+}
+#apiWallet .container aside .tabs div.tab h3 {
+  font-weight: 400;
+  color: #fff;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs div.tab h3 {
+    font-weight: 600;
+  }
+  #apiWallet .container aside .tabs div.tab h3 span {
+    display: none;
+  }
+}
+#apiWallet .container aside .tabs div.tab .imgbox {
+  margin-right: 1.5em;
+}
+#apiWallet .container aside .tabs div.tab .imgbox img {
+  width: 100%;
+  filter: invert(100%);
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs div.tab .imgbox {
+    width: 14px !important;
+    margin-right: 0;
+  }
+}
+#apiWallet .container aside .tabs div.tab i {
+  display: none;
+}
+#apiWallet .container aside .tabs div.tab.active {
+  position: relative;
+  background-color: #fff;
+}
+#apiWallet .container aside .tabs div.tab.active h3 {
+  color: #000000;
+}
+#apiWallet .container aside .tabs div.tab.active .imgbox {
+  align-self: center;
+  display: block;
+}
+#apiWallet .container aside .tabs div.tab.active .imgbox img {
+  width: 100%;
+  filter: inherit;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs div.tab.active .imgbox {
+    width: 14px;
+    margin-right: 0;
+  }
+}
+#apiWallet .container aside .tabs div.tab.active i {
+  display: block;
+  position: absolute;
+  right: 0;
+  width: 50px;
+  height: 50px;
+  background-color: #fff;
+  display: block;
+  overflow: hidden;
+}
+#apiWallet .container aside .tabs div.tab.active i::before {
+  content: "";
+  position: absolute;
+  left: -50px;
+  width: 100px;
+  height: 100px;
+  background-color: #000000;
+  border-radius: 50px;
+}
+#apiWallet .container aside .tabs div.tab.active i.oo1 {
+  top: -50px;
+}
+#apiWallet .container aside .tabs div.tab.active i.oo1::before {
+  top: -50px;
+}
+#apiWallet .container aside .tabs div.tab.active i.oo2 {
+  bottom: -50px;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container aside .tabs div.tab.active i {
+    display: block;
+    position: absolute;
+    right: inherit;
+    width: 30px;
+    height: 30px;
+    background-color: #fff;
+    display: block;
+    overflow: hidden;
+  }
+  #apiWallet .container aside .tabs div.tab.active i::before {
+    content: "";
+    position: absolute;
+    left: -30px;
+    width: 60px;
+    height: 60px;
+    background-color: #000000;
+    border-radius: 30px;
+  }
+  #apiWallet .container aside .tabs div.tab.active i.oo1 {
+    top: inherit;
+    left: -30px;
+    bottom: -7px;
+    border-right: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+  #apiWallet .container aside .tabs div.tab.active i.oo1::before {
+    top: -35px;
+  }
+  #apiWallet .container aside .tabs div.tab.active i.oo2 {
+    bottom: -2px;
+    right: -30px;
+    border-left: 2px solid #fff;
+    border-bottom: 2px solid #fff;
+  }
+  #apiWallet .container aside .tabs div.tab.active i.oo2::before {
+    top: -30px;
+    left: 0;
+  }
+}
+#apiWallet .container .tab_container {
+  flex-grow: 1;
+  width: 74%;
+  height: 95vh;
+  padding: 5%;
+  background-color: #fff;
+  box-sizing: border-box;
+  -webkit-border-radius: 50px;
+  -moz-border-radius: 50px;
+  -ms-border-radius: 50px;
+  border-radius: 50px;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .tab_container {
+    width: 100%;
+    height: auto;
+    margin-bottom: 40px;
+    -webkit-border-radius: 10px;
+    -moz-border-radius: 10px;
+    -ms-border-radius: 10px;
+    border-radius: 10px;
+  }
+}
+#apiWallet .container .tab_container .loginBar {
+  width: 100%;
+  position: relative;
+  right: 0;
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  margin-bottom: 1em;
+  padding-bottom: 1em;
+  border-bottom: 1px solid #D6D6D6;
+}
+#apiWallet .container .tab_container .loginBar .imgbox {
+  width: 2em;
+  margin-right: 0.5em;
+}
+#apiWallet .container .tab_container .loginBar .imgbox img {
+  max-width: 100%;
+  height: auto;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .tab_container .loginBar {
+    position: absolute;
+    top: 0;
+    right: 0;
+    color: #fff;
+    background-color: #252424;
+    border-radius: 0 0 10px 10px;
+    border: 0;
+    padding: 0.5em 1em;
+    font-size: 12px;
+  }
+}
+#apiWallet .container .copy_right {
+  width: 24%;
+  position: absolute;
+  left: 0;
+  bottom: 50px;
+  color: #fff;
+  text-align: right;
+  padding-right: 2em;
+  font-size: 1rem;
+  font-weight: 200;
+  box-sizing: border-box;
+}
+@media (max-width: 1199.98px) {
+  #apiWallet .container .copy_right {
+    left: 40px;
+    width: 24%;
+    font-size: 0.8rem;
+  }
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .copy_right {
+    position: fixed;
+    width: 100%;
+    z-index: -1;
+    left: inherit;
+    text-align: center;
+    bottom: 10px;
+  }
+}
+#apiWallet .container .result_message {
+  text-align: center;
+}
+#apiWallet .container .result_message span {
+  width: 100%;
+  font-size: 30px;
+  color: var(--primary);
+  display: block;
+  margin-top: 0.5em;
+}
+@media (max-width: 991.98px) {
+  #apiWallet .container .result_message {
+    margin-top: 5vw;
+  }
+}
+@media (max-width: 575.98px) {
+  #apiWallet .container .result_message span {
+    font-size: 20px;
+  }
+  #apiWallet .container .result_message #Notify_Icon {
+    width: 17vw;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .result_message {
+    margin-top: 0;
+  }
+  #apiWallet .container .result_message span {
+    font-size: 20px;
+  }
+  #apiWallet .container .result_message #Notify_Icon {
+    width: 66px;
+  }
+}
+#apiWallet .container .result_info {
+  margin: 70px 0;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .result_info {
+    margin: 10vw 0;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .result_info {
+    margin: 30px 0;
+  }
+}
+#apiWallet .container .result_info .item {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1em 10%;
+  color: #727171;
+}
+#apiWallet .container .result_info .item h1 {
+  width: 100%;
+  text-align: left;
+  font-size: 18px;
+}
+#apiWallet .container .result_info .item h1.title {
+  flex-basis: 45%;
+}
+#apiWallet .container .result_info .item h1.content .code_copy {
+  vertical-align: middle;
+  margin-left: 1em;
+  cursor: pointer;
+  opacity: 0.6;
+}
+#apiWallet .container .result_info .item h1.content .code_copy img {
+  height: 1.4em;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .result_info .item h1 {
+    font-size: 14px;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .container .result_info .item h1 {
+    font-size: 14px;
+  }
+}
+#apiWallet .container .result_info .item:first-child {
+  background-color: #EFEFEF;
+  height: 25px;
+  margin-bottom: 0.6em;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+#apiWallet .container .result_info .item:first-child h1.content {
+  display: flex;
+  align-items: center;
+  width: 100%;
+  color: var(--primary);
+  font-size: 15px;
+  font-weight: 600;
+}
+#apiWallet .container .result_info.error_info .item:first-child h1.content {
+  color: var(--error) !important;
+  font-weight: 400;
+}
+#apiWallet .error {
+  color: #f75454;
+  font-weight: 300;
+  margin-top: 0.5rem;
+  display: none;
+}
+#apiWallet .form-payment {
+  display: flex;
+  flex-direction: column;
+  justify-content: space-between;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment {
+    justify-content: flex-start;
+    min-height: inherit;
+  }
+}
+#apiWallet .form-payment .point_info {
+  width: 100%;
+  margin-top: 14px;
+  padding: 35px;
+  background-color: #EFEFEF;
+  box-sizing: border-box;
+  text-align: center;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  border-radius: 10px;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .point_info {
+    padding: 25px;
+    -webkit-border-radius: 5px;
+    -moz-border-radius: 5px;
+    -ms-border-radius: 5px;
+    border-radius: 5px;
+  }
+}
+#apiWallet .form-payment .point_info .point_amount {
+  font-size: 22px;
+  color: #727171;
+}
+#apiWallet .form-payment .point_info .point_amount span {
+  font-size: 70px;
+  font-weight: bold;
+  font-family: Arial, Helvetica, sans-serif;
+  color: var(--primary);
+  margin-right: 8px;
+  letter-spacing: -0.02em;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .point_info .point_amount {
+    font-size: 14px;
+  }
+  #apiWallet .form-payment .point_info .point_amount span {
+    font-size: 38px;
+  }
+}
+#apiWallet .form-payment .point_info .product_name {
+  font-size: 22px;
+  font-weight: bold;
+  color: #727171;
+  margin-top: 0.8em;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .point_info .product_name {
+    font-size: 14px;
+  }
+}
+#apiWallet .form-payment .form_list {
+  margin-top: 5%;
+  color: #A5A5A5;
+}
+#apiWallet .form-payment .form_list h4 {
+  font-size: 22px;
+  color: #000000;
+  margin-bottom: 5%;
+}
+#apiWallet .form-payment .form_list span {
+  font-size: 18px;
+}
+#apiWallet .form-payment .form_list span.wrong_msg {
+  font-size: 14px;
+  font-weight: normal;
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_list span {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 14px;
+  }
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_list h4 {
+    font-size: 18px;
+    color: #000000;
+  }
+  #apiWallet .form-payment .form_list span {
+    font-size: 14px;
+  }
+}
+#apiWallet .form-payment .form_bt {
+  display: flex;
+  justify-content: flex-end;
+  align-items: center;
+  text-align: right;
+  font-size: 18px;
+  margin-top: 10vw;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_bt {
+    margin-top: 5%;
+    width: 100%;
+  }
+}
+#apiWallet .form-payment .form_bt p {
+  color: #A5A5A5;
+}
+#apiWallet .form-payment .form_bt p .tab_bt {
+  color: var(--primary);
+  cursor: pointer;
+}
+#apiWallet .form-payment .form_bt .btn_blue {
+  width: 40%;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_bt {
+    flex-direction: column;
+    font-size: 14px;
+  }
+  #apiWallet .form-payment .form_bt p {
+    order: 2;
+    margin-top: 1.3em;
+  }
+  #apiWallet .form-payment .form_bt .btn_blue {
+    order: 1;
+  }
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_bt {
+    margin-top: 3vw;
+  }
+  #apiWallet .form-payment .form_bt p {
+    font-size: 14px;
+  }
+  #apiWallet .form-payment .form_bt .btn_blue {
+    width: 15em;
+    font-size: 14px;
+  }
+}/*# sourceMappingURL=wallet.css.map */

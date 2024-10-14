@@ -6,7 +6,7 @@
     <meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" />
     <meta name="format-detection" content="telephone=no" />
-    <title>api-kiwipin</title>
+    <title>api-wallet</title>
     <script src="config.js"></script>
     <script>
         (function () {
@@ -19,7 +19,7 @@
     <link rel="stylesheet" href="./assets/css/reset.css">
     <link rel="stylesheet" href="./assets/css/bootstrap-grid.css">
     <link rel="stylesheet" href="./assets/css/select2.min.css" />
-    <link rel="stylesheet" href="./assets/css/main.css?v=20240611">
+    <link rel="stylesheet" href="./assets/css/wallet.css?v=241008">
     <script>
         function initFunction(jsonObj) {
             renderInfo(jsonObj);
@@ -28,28 +28,49 @@
 
 </head>
 
-<body class="apiKiwiBody">
-    <div id="apiKiwipin">
+<body class="walletBody">
+    <div id="apiWallet">
         <div class="container">
-            <div class="tabs">
-                <div class="tab tab1 active" rel="tab1">
-                    <span class="imgbox">
-                        <img src="./assets/img/icon_tab_topup.svg" alt="">
-                    </span>
-                    <h3 class=""><b>進行</b><span>儲值</span></h3>
+            <aside>
+                <div class="logo">
+                    <img src="./assets/img/logo3.svg" alt="" >
                 </div>
-                <div class="tab tab2" rel="tab2">
-                    <span class="imgbox">
-                        <img src="./assets/img/icon_tab_point.svg" alt="">
-                    </span>
-                    <h3 class=""><span>購買</span><b>點數</b></h3>
+                <div class="tabs">
+                    <div class="tab tab1 active" rel="tab1">
+                        <i class="oo1"></i>
+                        <i class="oo2"></i>
+                        <span class="imgbox">
+                            <img src="./assets/img/icon_add.svg" alt="">
+                        </span>
+                        <h3><span>儲值</span></h3>
+                    </div>
+                    <!-- <div class="tab tab2" rel="tab2">
+                        <i class="oo1"></i>
+                        <i class="oo2"></i>
+                        <span class="imgbox">
+                            <img src="./assets/img/icon_add.svg" alt="">
+                        </span>
+                        <h3><span>購買</span></h3>
+                    </div> -->
                 </div>
-            </div>
+            </aside>
+            
             <div class="tab_container">
-                <!-- tab1 -->
+                <div class="loginBar">
+                    <span class="imgbox">
+                        <img src="./assets/img/icon_member.svg" alt="">
+                    </span>
+                    <span>abc12345@gmail.com</span>
+                </div>
+                <!-- tab1 op-->
                 <div id="tab1" class="tab_content">
                     <form role="form" id="form1" action="" method="post" target="_self" class="form-payment"
                         onsubmit="return check_submit1();">
+                        <div class="form_list reg">
+                            <h4>儲值錢包</h4>
+                            <span>輸入儲值密碼</span>
+                        </div>
+                        
                         <div class="point_info">
                             <p class="point_amount"><span></span>點</p>
                             <p id="PRODUCT_NAME" class="product_name">遊戲鑽石 顆</p>
@@ -64,46 +85,18 @@
                         </ul>
 
                         <div class="form_bt">
-                            <p>沒有KIWI點數? <span class="tab_bt" rel="tab2" href="">點此購買</span></p>
                             <a id="confirm" href="javascript:void(0)" onclick="return check_submit1();"
                                 class="btn btn_blue">儲值</a>
                         </div>
                         <input type="hidden" name="data" value="" id="f_data">
                     </form>
-
                 </div>
-                <!-- tab2 -->
-                <div id="tab2" class="tab_content">
-                    <form role="form" id="form2" action="order_buy_pin.php" method="post" target="_self"
-                        class="form-payment" onsubmit="return check_submit2();">
-                        <div class="point_info">
-                            <p class="point_amount"><span></span>點</p>
-                            <p class="product_name">KIWI點數</p>
-                        </div>
-                        <ul class="form_list reg">
-                            <li class="email">
-                                <span>輸入Email購買</span>
-                                <input type="email" name="U_EMAIL" id="U_EMAIL" placeholder="mail@gmail.com">
-                                <div class="wrong_msg email_msg" style="display:none"><small
-                                        class="email_msg_text"></small></div>
-                            </li>
-                        </ul>
-
-                        <div class="form_bt">
-                            <p>已有KIWI點數? <span class="tab_bt" rel="tab1" href="">返回儲值</span></p>
-                            <a id="confirm2" href="javascript:void(0)" onclick="return check_submit2();"
-                                class="btn btn_blue">購買</a>
-                        </div>
-                        <input type="hidden" name="data" value="" id="b_data">
-                    </form>
-                </div>
-                <div>
-                </div>
+                <!-- tab1 ed-->
+                <!-- <div id="tab2" class="tab_content">
+                    222
+                </div> -->
             </div>
-        </div>
-        <div class="bgArea">
-            <img src="./assets/img/logo2.svg" alt="">
-            <div class="ooo"></div>
+            <div class="copy_right">service@kiwipin.com.tw</div>
         </div>
     </div>
 
@@ -122,9 +115,10 @@
         }
 
         function renderInfo(json) {
+            var amountNUM=Number(json.AMOUNT);
             $('#f_data').val(json.data);
             $('#b_data').val(json.data);
-            $('.point_amount span').text(json.AMOUNT);
+            $('.point_amount span').html(formatCurrency(amountNUM));
             $('#buy_pin_amount').text(json.AMOUNT);
 
             if (json.PRODUCT_NAME !== null && json.PRODUCT_NAME !== undefined) {
@@ -142,8 +136,17 @@
                     $(eleName).val(json[k]);
                 }
             });
+            //千元標註
+            function formatCurrency(number) {
+                // 確保 number 是一個整數
+                if (!Number.isInteger(number)) return null;
+
+                // 將整數轉成字串，並利用正規表達式添加逗號
+                return number.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ",");
+            }
 
         }
+        
 
         //tab
         $(".tab_content:eq(1)").hide();
@@ -245,7 +248,7 @@
     </script>
 
     <script>
-        initFunction({ "Tpye": "GET_PINCODE", "data": "data=eyJNU0dfVFlQRSI6IjAxMDAiLCJQQ09ERSI6IjMwMDAwMCIsIkNJRCI6IkMwMDAwNDAwMTAwMDEiLCJDT0lEIjoiUFAyMDI0MDkxMzExNDYzNTAwMjE0NiIsIkNVSUQiOiJVU0QiLCJQQUlEIjoiQ09QS1dQMDEiLCJBTU9VTlQiOiIxIiwiUkVUVVJOX1VSTCI6Imh0dHBzOlwvXC9zdGFnZS1hcGkucDk5cGF5LmNvbVwvS0lXSVwvcmV0dXJudXJsIiwiUFJPRFVDVF9JRCI6IiIsIlBST0RVQ1RfTkFNRSI6IktJV0kgXHU5MzIyXHU1MzA1IDEwMCBcdTllZGUiLCJVU0VSX0FDQ1RJRCI6IjE4IiwiVVNFUl9JUCI6IjExNC4zMi4xOS4yNTIiLCJNRU1PIjoiIiwiRVhURU5TSU9OIjoiIiwiRVJRQyI6IlVsM0xtMkw5YVFoVm5jZGpwd0FBaUlwS3NkST0ifQ%253D%253D", "CUID": "USD", "AMOUNT": "156", "PRODUCT_NAME": "怪獸彈珠遊戲-新手禮包", "Background": "" });
+        initFunction({ "Tpye": "GET_PINCODE", "data": "data=eyJNU0dfVFlQRSI6IjAxMDAiLCJQQ09ERSI6IjMwMDAwMCIsIkNJRCI6IkMwMDAwNDAwMTAwMDEiLCJDT0lEIjoiUFAyMDI0MDkxMzExNDYzNTAwMjE0NiIsIkNVSUQiOiJVU0QiLCJQQUlEIjoiQ09QS1dQMDEiLCJBTU9VTlQiOiIxIiwiUkVUVVJOX1VSTCI6Imh0dHBzOlwvXC9zdGFnZS1hcGkucDk5cGF5LmNvbVwvS0lXSVwvcmV0dXJudXJsIiwiUFJPRFVDVF9JRCI6IiIsIlBST0RVQ1RfTkFNRSI6IktJV0kgXHU5MzIyXHU1MzA1IDEwMCBcdTllZGUiLCJVU0VSX0FDQ1RJRCI6IjE4IiwiVVNFUl9JUCI6IjExNC4zMi4xOS4yNTIiLCJNRU1PIjoiIiwiRVhURU5TSU9OIjoiIiwiRVJRQyI6IlVsM0xtMkw5YVFoVm5jZGpwd0FBaUlwS3NkST0ifQ%253D%253D", "CUID": "USD", "AMOUNT": "2000", "PRODUCT_NAME": "KIWI 點數", "Background": "" });
 
     </script>
 </body>
