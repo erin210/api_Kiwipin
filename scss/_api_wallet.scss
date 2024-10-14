@@ -431,10 +431,15 @@ input[type=radio] {
               filter: invert(100%);
             }
             @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
-              width: 16px !important;
+              width: 18px !important;
               margin-right: 0;
               font-size: 1px;
-              @include shadow_stroke(0.5px, -0.5px, $dark);
+              // @include shadow_stroke(0.5px, -0.5px, $dark);
+              background: url(/assets/img/icon_add_m.svg)no-repeat center center;
+              background-size: cover;
+              img{
+                opacity: 0;
+              }
             }
           }
 
@@ -560,6 +565,7 @@ input[type=radio] {
       @include border-radius(50px);
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
         width: 100%;
+        height: auto;
         @include border-radius(10px);
       }
       @media screen and (max-width: 767px){
@@ -906,25 +912,25 @@ input[type=radio] {
       align-items: center;
       text-align: right;
       font-size: 18px;
-      margin-top: 10vw;
+      margin-top: 4.5vw;
       // margin-bottom: 8vw;
 
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
         // position: fixed;
-        position: absolute;
+        // position: absolute;
         // left: 0;
-        right: 5vw;
-        bottom: 7vw;
+        // right: 5vw;
+        // bottom: 7vw;
       // margin-top: 5%;
         // width: 100%;
       }
       @media screen and (max-width: 767px){
-        right: 9vw;
+        // margin-top: 30vh;
 
       }
-      @media screen and (max-device-width: 932px) and (orientation: landscape){
-        position: inherit;
-      }
+      // @media screen and (max-device-width: 932px) and (orientation: landscape){
+      //   position: inherit;
+      // }
 
       p {
         color: $text_grey2;
@@ -941,8 +947,9 @@ input[type=radio] {
       }
 
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
-        flex-direction: column;
+        // flex-direction: column;
         font-size: 14px;
+        // border: 1px solid #f00;
 
         p {
           order: 2;

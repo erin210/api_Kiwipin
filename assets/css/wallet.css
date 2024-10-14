@@ -413,10 +413,14 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container aside .tabs div.tab .imgbox {
-    width: 16px !important;
+    width: 18px !important;
     margin-right: 0;
     font-size: 1px;
-    filter: drop-shadow(0.5px 0 0 #000000) drop-shadow(0 0.5px 0 #000000) drop-shadow(0 -0.5px 0 #000000) drop-shadow(-0.5px 0 0 #000000);
+    background: url(/assets/img/icon_add_m.svg) no-repeat center center;
+    background-size: cover;
+  }
+  #apiWallet .container aside .tabs div.tab .imgbox img {
+    opacity: 0;
   }
 }
 #apiWallet .container aside .tabs div.tab i {
@@ -532,6 +536,7 @@ input[type=radio]:checked::after {
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container .tab_container {
     width: 100%;
+    height: auto;
     -webkit-border-radius: 10px;
     -moz-border-radius: 10px;
     -ms-border-radius: 10px;
@@ -844,24 +849,7 @@ input[type=radio]:checked::after {
   align-items: center;
   text-align: right;
   font-size: 18px;
-  margin-top: 10vw;
-}
-@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
-  #apiWallet .form-payment .form_bt {
-    position: absolute;
-    right: 5vw;
-    bottom: 7vw;
-  }
-}
-@media screen and (max-width: 767px) {
-  #apiWallet .form-payment .form_bt {
-    right: 9vw;
-  }
-}
-@media screen and (max-device-width: 932px) and (orientation: landscape) {
-  #apiWallet .form-payment .form_bt {
-    position: inherit;
-  }
+  margin-top: 4.5vw;
 }
 #apiWallet .form-payment .form_bt p {
   color: #A5A5A5;
@@ -875,7 +863,6 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .form-payment .form_bt {
-    flex-direction: column;
     font-size: 14px;
   }
   #apiWallet .form-payment .form_bt p {
