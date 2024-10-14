@@ -565,7 +565,7 @@ input[type=radio] {
       @include border-radius(50px);
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
         width: 100%;
-        height: auto;
+        // height: auto;
         @include border-radius(10px);
       }
       @media screen and (max-width: 767px){
@@ -574,7 +574,6 @@ input[type=radio] {
       @media screen and (max-device-width: 932px) and (orientation: landscape){
         margin-bottom:30px;
         height: auto;
-
       }
       .loginBar{
         width: 100%;
