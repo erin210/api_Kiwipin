@@ -108,8 +108,12 @@
     </div>
 
     <script>
+        // console.log(window.location.hostname);
+        // console.log('Page Base URL:', pageBaseUrl);
+        // console.log('API Base URL:', apiUrl);
+
         $(function () {
-            $('base').attr('href', 'https://api.kiwipin.com');
+            $('base').attr('href', apiUrl);
         });
 
         //從result回來，對照參數

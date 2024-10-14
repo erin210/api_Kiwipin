@@ -51,13 +51,13 @@ select {
   font-weight: 200;
   width: -webkit-fill-available;
   width: -moz-available;
-  color: #727171;
+  color: #D6D6D6;
   /*firefox*/
   padding: 1.2em;
-  border: 1px solid #D6D6D6;
+  border: 0;
   border-radius: 10px;
   margin-top: 14px;
-  background-color: transparent;
+  background-color: #EFEFEF;
   margin-right: 0;
 }
 input.input_error:focus-visible,
@@ -88,6 +88,10 @@ input:disabled {
   -webkit-text-fill-color: #D6D6D6 !important;
   background-color: #EFEFEF;
   border: 0;
+}
+
+small .icon {
+  vertical-align: middle;
 }
 
 .text_visible {
@@ -193,10 +197,10 @@ input[type=radio]:checked::after {
 .btn {
   width: 50%;
   color: #fff;
-  padding: 1.2em 2em;
+  padding: 1.2em;
   border: none;
   outline: none;
-  border-radius: 50px;
+  border-radius: 10px;
   box-sizing: border-box;
   font-size: 20px;
   cursor: pointer;
@@ -373,7 +377,7 @@ input[type=radio]:checked::after {
     margin-bottom: -2px;
     font-size: 14px;
     border-radius: 50px 50px 0 0;
-    border-bottom: 2px solid #fff;
+    border-bottom: 2px solid #F8F8F6;
   }
 }
 #apiWallet .container aside .tabs div.tab h3 {
@@ -406,7 +410,7 @@ input[type=radio]:checked::after {
 }
 #apiWallet .container aside .tabs div.tab.active {
   position: relative;
-  background-color: #fff;
+  background-color: #F8F8F6;
 }
 #apiWallet .container aside .tabs div.tab.active h3 {
   color: #000000;
@@ -431,7 +435,7 @@ input[type=radio]:checked::after {
   right: 0;
   width: 50px;
   height: 50px;
-  background-color: #fff;
+  background-color: #F8F8F6;
   display: block;
   overflow: hidden;
 }
@@ -460,7 +464,7 @@ input[type=radio]:checked::after {
     right: inherit;
     width: 30px;
     height: 30px;
-    background-color: #fff;
+    background-color: #F8F8F6;
     display: block;
     overflow: hidden;
   }
@@ -477,8 +481,8 @@ input[type=radio]:checked::after {
     top: inherit;
     left: -30px;
     bottom: -7px;
-    border-right: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-right: 2px solid #F8F8F6;
+    border-bottom: 2px solid #F8F8F6;
   }
   #apiWallet .container aside .tabs div.tab.active i.oo1::before {
     top: -35px;
@@ -486,8 +490,8 @@ input[type=radio]:checked::after {
   #apiWallet .container aside .tabs div.tab.active i.oo2 {
     bottom: -2px;
     right: -30px;
-    border-left: 2px solid #fff;
-    border-bottom: 2px solid #fff;
+    border-left: 2px solid #F8F8F6;
+    border-bottom: 2px solid #F8F8F6;
   }
   #apiWallet .container aside .tabs div.tab.active i.oo2::before {
     top: -30px;
@@ -499,7 +503,7 @@ input[type=radio]:checked::after {
   width: 74%;
   height: 95vh;
   padding: 5%;
-  background-color: #fff;
+  background-color: #F8F8F6;
   box-sizing: border-box;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
@@ -541,7 +545,7 @@ input[type=radio]:checked::after {
     position: absolute;
     top: 0;
     right: 0;
-    color: #fff;
+    color: #F8F8F6;
     background-color: #252424;
     border-radius: 0 0 10px 10px;
     border: 0;
@@ -772,6 +776,28 @@ input[type=radio]:checked::after {
     font-size: 14px;
   }
 }
+#apiWallet .form-payment .form_list .code_PW {
+  position: relative;
+}
+#apiWallet .form-payment .form_list .code_PW input {
+  padding-right: 30px;
+}
+#apiWallet .form-payment .form_list .code_PW img {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: block;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .form_list .code_PW img {
+    width: 20px;
+    height: 20px;
+  }
+}
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .form-payment .form_list h4 {
     font-size: 18px;
@@ -803,7 +829,7 @@ input[type=radio]:checked::after {
   cursor: pointer;
 }
 #apiWallet .form-payment .form_bt .btn_blue {
-  width: 40%;
+  width: 27%;
 }
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .form-payment .form_bt {

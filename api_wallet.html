@@ -78,7 +78,11 @@
                         <ul class="form_list reg">
                             <li class="check_code">
                                 <span>輸入儲值密碼</span>
-                                <input type="text" name="U_PINCODE" id="U_PINCODE" placeholder="請輸入16碼英數字組合" maxlength="16">
+                                <div class="code_PW">
+                                    <input type="password" name="U_PINCODE" id="U_PINCODE"  placeholder="請輸入16碼英數字組合" maxlength="16">
+                                    <img id="togglePassword" src="./assets/img/icon_eye_close.svg" alt="eye">
+                                </div>
+                                
                                 <div class="wrong_msg pincode_msg" style="display:none"><small
                                         class="pincode_msg_text"></small></div>
                             </li>
@@ -90,6 +94,7 @@
                         </div>
                         <input type="hidden" name="data" value="" id="f_data">
                     </form>
+
                 </div>
                 <!-- tab1 ed-->
                 <!-- <div id="tab2" class="tab_content">
@@ -101,8 +106,12 @@
     </div>
 
     <script>
+        // console.log(window.location.hostname);
+        // console.log('Page Base URL:', pageBaseUrl);
+        // console.log('API Base URL:', apiUrl);
+
         $(function () {
-            $('base').attr('href', 'https://api.kiwipin.com');
+            $('base').attr('href', apiUrl);
         });
 
         //從result回來，對照參數
@@ -154,6 +163,16 @@
             var activeTab = $(this).attr("rel");
             switchTab(activeTab);
         });
+        
+        //密碼眼睛
+        $('#togglePassword').on('click', function() {
+            const passwordField = $('#U_PINCODE');
+            const isPasswordVisible = passwordField.attr('type') === 'text';
+            passwordField.attr('type', isPasswordVisible ? 'password' : 'text');
+
+            const newIconSrc = isPasswordVisible ? pageBaseUrl+'/assets/img/icon_eye_close.svg' : pageBaseUrl+'/assets/img/icon_eye_open.svg';
+            $(this).attr('src', newIconSrc);
+        });
 
         function switchTab(tab) {
             $(".tab_content").hide(); 
@@ -189,7 +208,7 @@
 
         function check_U_PINCODE() {
             if ($('#U_PINCODE').val() == "") {
-                $('.pincode_msg_text').text("請填寫儲值密碼");
+                $('.pincode_msg_text').html('<i class="icon"><img src="./assets/img/icon_error.svg"></i>請填寫儲值密碼');
                 $('.pincode_msg').show();
                 $('#U_PINCODE').focus().attr('aria-invalid', 'true').addClass('input_error');
                 return false;

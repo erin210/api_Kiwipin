@@ -49,14 +49,14 @@ select {
   font-weight: 200;
   width: -webkit-fill-available;
   width: -moz-available;
-  color: $logo_grey;
+  color: $light_grey3;
 
   /*firefox*/
   padding: 1.2em;
-  border: 1px solid $light_grey3;
+  border: 0;
   border-radius: 10px;
   margin-top: 14px;
-  background-color: transparent;
+  background-color: $light_grey4;
   margin-right: 0;
 
   &.input_error:focus-visible {
@@ -79,6 +79,7 @@ select {
   }
 }
 
+
 input[readonly],
 input:disabled {
   color: $light_grey3 !important;
@@ -87,6 +88,11 @@ input:disabled {
   border: 0;
 }
 
+small{
+  .icon{
+    vertical-align: middle;
+  }
+}
 .text_visible {
   position: relative;
 }
@@ -205,10 +211,10 @@ input[type=radio] {
   width: 50%;
   color: $white;
   // font-weight: 400;
-  padding: 1.2em 2em;
+  padding: 1.2em;
   border: none;
   outline: none;
-  border-radius: 50px;
+  border-radius: 10px;
   box-sizing: border-box;
   font-size: 20px;
   cursor: pointer;
@@ -391,7 +397,7 @@ input[type=radio] {
             font-size: 14px;
             border-radius: 50px 50px 0 0;
             // border: 1px solid #f00;
-                  border-bottom: 2px solid $white;
+                  border-bottom: 2px solid $bg_grey;
           }
 
           h3 {
@@ -424,7 +430,7 @@ input[type=radio] {
 
           &.active {
             position: relative;
-            background-color: $white;
+            background-color: $bg_grey;
             h3 {
               color: $dark;
             }
@@ -446,7 +452,7 @@ input[type=radio] {
               right: 0;
               width: 50px;
               height: 50px;
-              background-color: $white;
+              background-color: $bg_grey;
               // border: 1px solid #f00;
               display: block;
               overflow: hidden;
@@ -475,7 +481,7 @@ input[type=radio] {
                 right: inherit;
                 width: 30px;
                 height: 30px;
-                background-color: $white;
+                background-color: $bg_grey;
                 // border: 1px solid #f00;
                 display: block;
                 overflow: hidden;
@@ -492,8 +498,8 @@ input[type=radio] {
                   top: inherit;
                   left:-30px;
                   bottom: -7px;
-                  border-right: 2px solid $white;
-                  border-bottom: 2px solid $white;
+                  border-right: 2px solid $bg_grey;
+                  border-bottom: 2px solid $bg_grey;
                   &::before{
                     top: -35px;
                     // bottom:-30px;
@@ -502,8 +508,8 @@ input[type=radio] {
                 &.oo2{
                   bottom: -2px;
                   right:-30px;
-                  border-left: 2px solid $white;
-                  border-bottom: 2px solid $white;
+                  border-left: 2px solid $bg_grey;
+                  border-bottom: 2px solid $bg_grey;
                   &::before{
                     top:-30px;
                     left: 0;
@@ -530,7 +536,7 @@ input[type=radio] {
       width: 74%;
       height: 95vh;
       padding: 5%;
-      background-color: $white;
+      background-color: $bg_grey;
       box-sizing: border-box;
       @include border-radius(50px);
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
@@ -561,7 +567,7 @@ input[type=radio] {
           position: absolute;
           top: 0;
           right: 0;
-          color: $white;
+          color: $bg_grey;
           background-color: #252424;
           border-radius:0 0 10px 10px;
           border: 0;
@@ -814,6 +820,7 @@ input[type=radio] {
           font-size: 14px;
           font-weight: normal;
         }
+        
 
         @media screen and (max-device-width: 932px) and (orientation: landscape) {
           -webkit-text-size-adjust: none;
@@ -821,6 +828,29 @@ input[type=radio] {
           font-size: 14px;
         }
       }
+      .code_PW{
+        position: relative;
+        input{
+          padding-right: 30px;
+        }
+        img{
+          position: absolute;
+          right: 10px;
+          top: 60%;
+          width: 30px;
+          height: 30px;
+          transform: translateY(-50%);
+          cursor: pointer;
+          display: block;
+          @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+            
+          width: 20px;
+          height: 20px;
+          }
+        }
+        
+      }
+
 
       @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
         // margin-top: 5%;
@@ -862,7 +892,7 @@ input[type=radio] {
       }
 
       .btn_blue {
-        width: 40%;
+        width: 27%;
 
       }
 
