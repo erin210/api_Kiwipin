@@ -1,4 +1,3 @@
-@charset "UTF-8";
 @import url("https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap");
 :root {
   --primary:#8FB0DC;
@@ -14,9 +13,10 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 100%;
+  letter-spacing: 0.05em;
 }
 body.walletBody {
-  background-color: #000000;
+  background-color: #121212;
   min-height: 100vh;
   display: flex;
   justify-content: center;
@@ -53,6 +53,7 @@ select {
   width: -webkit-fill-available;
   width: -moz-available;
   color: #A5A5A5;
+  letter-spacing: 0;
   /*firefox*/
   padding: 1.2em;
   border: 1px solid transparent;
@@ -69,7 +70,6 @@ input.input_error:focus, input.input_error:focus-visible,
 select.input_error:focus,
 select.input_error:focus-visible {
   outline: none;
-  /* 移除預設的 focus 樣式 */
   border-color: var(--error);
 }
 input::placeholder,
@@ -443,7 +443,7 @@ input[type=radio]:checked::after {
   background-color: #F8F8F6;
 }
 #apiWallet .container aside .tabs div.tab.active h3 {
-  color: #000000;
+  color: #121212;
 }
 #apiWallet .container aside .tabs div.tab.active .imgbox {
   align-self: center;
@@ -476,7 +476,7 @@ input[type=radio]:checked::after {
   left: -50px;
   width: 100px;
   height: 100px;
-  background-color: #000000;
+  background-color: #121212;
   border-radius: 50px;
 }
 #apiWallet .container aside .tabs div.tab.active i.oo1 {
@@ -507,7 +507,7 @@ input[type=radio]:checked::after {
     left: -30px;
     width: 60px;
     height: 60px;
-    background-color: #000000;
+    background-color: #121212;
     border-radius: 27px;
   }
   #apiWallet .container aside .tabs div.tab.active i.oo1 {
@@ -594,6 +594,7 @@ input[type=radio]:checked::after {
   margin-bottom: 1em;
   padding-bottom: 1em;
   border-bottom: 1px solid #D6D6D6;
+  letter-spacing: 0;
 }
 #apiWallet .container .tab_container .loginBar .imgbox {
   width: 2em;
@@ -648,7 +649,7 @@ input[type=radio]:checked::after {
     padding-top: 0.5em;
     padding-bottom: 0.8em;
     padding-right: 0;
-    background-color: #000000;
+    background-color: #121212;
     box-sizing: border-box;
     display: block;
   }
@@ -830,15 +831,18 @@ input[type=radio]:checked::after {
   color: #727171;
 }
 #apiWallet .form-payment .form_list span {
-  font-weight: 300;
+  font-weight: 400;
 }
 #apiWallet .form-payment .form_list h4 {
   font-size: 22px;
-  color: #000000;
+  color: #121212;
   margin-bottom: 5%;
 }
 #apiWallet .form-payment .form_list .check_code {
   min-height: 150px;
+}
+#apiWallet .form-payment .form_list .check_code input {
+  font-size: 16px;
 }
 @media (max-width: 1199.98px) {
   #apiWallet .form-payment .form_list {
@@ -862,7 +866,7 @@ input[type=radio]:checked::after {
   }
   #apiWallet .form-payment .form_list h4 {
     font-size: 18px;
-    color: #000000;
+    color: #121212;
     margin-bottom: 20px;
   }
   #apiWallet .form-payment .form_list span {
@@ -870,6 +874,9 @@ input[type=radio]:checked::after {
   }
   #apiWallet .form-payment .form_list .check_code {
     min-height: inherit;
+  }
+  #apiWallet .form-payment .form_list .check_code input {
+    font-size: 12px;
   }
 }
 #apiWallet .form-payment span {

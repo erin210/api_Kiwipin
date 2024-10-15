@@ -1,4 +1,4 @@
-// @import "_variable";
+//@import "_variable";
 @import url('https://fonts.googleapis.com/css2?family=Noto+Sans+TC:wght@100..900&display=swap');
 
 //basic
@@ -8,6 +8,7 @@ body {
   font-weight: 400;
   font-style: normal;
   font-size: 100%;
+  letter-spacing: 0.05em;
 
   &.walletBody {
     background-color: $dark;
@@ -52,6 +53,7 @@ select {
   width: -webkit-fill-available;
   width: -moz-available;
   color: $text_grey2;
+  letter-spacing: 0;
 
   /*firefox*/
   padding: 1.2em;
@@ -68,7 +70,6 @@ select {
   &.input_error:focus,
   &.input_error:focus-visible {
     outline: none;
-    /* 移除預設的 focus 樣式 */
     border-color: var(--error);
   }
 
@@ -90,10 +91,6 @@ input:disabled {
   background-color: $light_grey4;
   border: 0;
 }
-
-// input:focus{
-//   border: 1px solid $error;
-// }
 
 small {
   .icon {
@@ -214,12 +211,8 @@ input[type=radio] {
 }
 
 .btn {
-  // display: flex;
-  // align-items: center;
-  // justify-content: center;
   width: 50%;
   color: $white;
-  // font-weight: 400;
   padding: 1.2em;
   border: none;
   outline: none;
@@ -229,7 +222,6 @@ input[type=radio] {
   cursor: pointer;
   text-decoration: none;
   text-align: center;
-
   -webkit-transition: all 0.30s ease-in-out;
   -moz-transition: all 0.30s ease-in-out;
   -ms-transition: all 0.30s ease-in-out;
@@ -247,8 +239,6 @@ input[type=radio] {
   &:hover {
     background-color: var(--primary);
     filter: brightness(1.1);
-    // background-color: mix(white, var(--primary), 70%);
-    // opacity: .7;
   }
 
   @media screen and (max-width: 767px),
@@ -264,13 +254,7 @@ input[type=radio] {
   justify-content: center;
   align-items: center;
   width: 100%;
-  // padding-left: 10vw;
   overflow: hidden;
-  // border: 1px solid #f00;
-  // @include breakpoint('xl','max'){
-  //   // padding-left: 0;
-
-  // }
   @include breakpoint('lg', 'max') {
     padding-left: 0;
   }
@@ -290,11 +274,7 @@ input[type=radio] {
     justify-content: center;
     width: 100%;
     height: 100%;
-    // padding: 0 40px;
-    // padding-right: 70px;
     box-sizing: border-box;
-
-    // border: 1px solid #f00;
     @include breakpoint('lg', 'max') {
       max-width: 100%;
       padding-right: 20px;
@@ -329,7 +309,6 @@ input[type=radio] {
     }
 
     @include breakpoint('xxs', 'max') {
-      // height: 72vh;
       padding-top: 0;
     }
 
@@ -342,7 +321,6 @@ input[type=radio] {
       screen and (max-device-width: 932px) and (orientation: landscape) {
         position: inherit;
         width: 100%;
-        // height: calc(150px + 87px);
       }
 
       .logo {
@@ -357,7 +335,6 @@ input[type=radio] {
         img {
           max-width: 100%;
           height: auto;
-          // display: block;
         }
 
         @include breakpoint('lg', 'max') {
@@ -397,7 +374,6 @@ input[type=radio] {
       .tabs {
         display: flex;
         flex-direction: column;
-        // justify-content: center;
         align-items: end;
         width: 100%;
         margin-top: 50px;
@@ -416,7 +392,6 @@ input[type=radio] {
 
         @media screen and (max-device-width: 932px) and (orientation: landscape) {
           font-size: 18px;
-          // margin-bottom: 20px;
         }
 
         div.tab {
@@ -434,14 +409,12 @@ input[type=radio] {
           @media screen and (max-width: 767px),
           screen and (max-device-width: 932px) and (orientation: landscape) {
             width: auto;
-            // justify-content: flex-end;
             padding: 1.5em;
             padding-bottom: 2.5em;
             margin: 0 1em;
             margin-bottom: -2px;
             font-size: 14px;
             border-radius: 50px 50px 0 0;
-            // border: 1px solid #f00;
             border-bottom: 2px solid $bg_grey;
           }
 
@@ -473,7 +446,6 @@ input[type=radio] {
               width: 18px !important;
               margin-right: 0;
               font-size: 1px;
-              // @include shadow_stroke(0.5px, -0.5px, $dark);
               background: url(#{$img-path}icon_add_m.svg)no-repeat center center;
               background-size: cover;
 
@@ -518,7 +490,6 @@ input[type=radio] {
               width: 50px;
               height: 50px;
               background-color: $bg_grey;
-              // border: 1px solid #f00;
               display: block;
               overflow: hidden;
               border-right: 1px solid $bg_grey;
@@ -551,12 +522,10 @@ input[type=radio] {
               screen and (max-device-width: 932px) and (orientation: landscape) {
                 display: block;
                 position: absolute;
-                // bottom: 0;
                 right: inherit;
                 width: 30px;
                 height: 30px;
                 background-color: $bg_grey;
-                // border: 1px solid #f00;
                 display: block;
                 overflow: hidden;
 
@@ -579,7 +548,6 @@ input[type=radio] {
 
                   &::before {
                     top: -35px;
-                    // bottom:-30px;
                   }
                 }
 
@@ -590,7 +558,6 @@ input[type=radio] {
                   border-right: 0;
                   border-left: 2px solid $bg_grey;
                   border-bottom: 2px solid $bg_grey;
-
                   &::before {
                     top: -30px;
                     left: 0;
@@ -603,16 +570,10 @@ input[type=radio] {
           }
 
         }
-
-
-
       }
-
-
     }
 
     .tab_container {
-      // display: flex;
       flex-grow: 1;
       width: 74%;
       height: 95vh;
@@ -627,9 +588,7 @@ input[type=radio] {
       }
 
       @include breakpoint('md', 'max') {
-        // padding: 3% 4%;
         @include border-radius(30px);
-
       }
 
       @media screen and (max-width: 767px),
@@ -642,7 +601,6 @@ input[type=radio] {
 
       @media screen and (max-width: 767px) {
         .tab_content {
-          // height: 100%;
           height: calc(100% - env(safe-area-inset-bottom));
         }
       }
@@ -662,6 +620,8 @@ input[type=radio] {
         margin-bottom: 1em;
         padding-bottom: 1em;
         border-bottom: 1px solid $light_grey3;
+
+        letter-spacing: 0;
 
         .imgbox {
           width: 2em;
@@ -695,7 +655,6 @@ input[type=radio] {
 
     .email_info {
       width: 24%;
-      // border: 1px solid #f00;
       position: absolute;
       left: 0;
       bottom: 50px;
@@ -719,14 +678,11 @@ input[type=radio] {
         left: 0;
         z-index: 99 !important;
         width: 100%;
-        // height: 1.5em;
         text-align: center;
         bottom: 0;
         padding-top: .5em;
         padding-bottom: .8em;
         padding-right: 0;
-
-        // padding: 3px 0;
         background-color: $dark;
         box-sizing: border-box;
         display: block;
@@ -796,7 +752,6 @@ input[type=radio] {
         align-items: center;
         padding: 1em 10%;
         color: $logo_grey;
-        // border-bottom: 1px solid $light_grey4;
 
         h1 {
 
@@ -811,8 +766,6 @@ input[type=radio] {
           &.content {
             .code_copy {
               vertical-align: middle;
-              // display: inline-block;
-              // line-height: 2;
               margin-left: 1em;
               cursor: pointer;
               opacity: .6;
@@ -877,7 +830,6 @@ input[type=radio] {
     display: flex;
     flex-direction: column;
     justify-content: space-between;
-    // min-height: 51vh;
 
     @media screen and (max-width: 767px),
     screen and (max-device-width: 932px) and (orientation: landscape) {
@@ -917,6 +869,7 @@ input[type=radio] {
         @media screen and (max-width: 767px),
         screen and (max-device-width: 932px) and (orientation: landscape) {
           font-size: 14px;
+
           span {
             font-size: 38px;
           }
@@ -939,8 +892,9 @@ input[type=radio] {
     .form_list {
       margin-top: 5%;
       color: $logo_grey;
-      span{
-        font-weight: 300;
+
+      span {
+        font-weight: 400;
       }
 
       h4 {
@@ -951,6 +905,9 @@ input[type=radio] {
 
       .check_code {
         min-height: 150px;
+        input{
+          font-size: 16px;
+        }
       }
 
       @include breakpoint('lg', 'max') {
@@ -986,6 +943,9 @@ input[type=radio] {
 
         .check_code {
           min-height: inherit;
+          input{
+            font-size: 12px;
+          }
         }
       }
     }
@@ -1044,33 +1004,12 @@ input[type=radio] {
       text-align: right;
       font-size: 18px;
 
-      // margin-top: 4.5vw;
-      // margin-bottom: 8vw;
-      @include breakpoint('md', 'max') {
-        // margin-top: 3%;
-      }
-
-      @media screen and (max-width: 767px),
-      screen and (max-device-width: 932px) and (orientation: landscape) {
-        // position: fixed;
-        // position: absolute;
-        // left: 0;
-        // right: 5vw;
-        // bottom: 7vw;
-        // margin-top: 5%;
-        // width: 100%;
-      }
-
       @media screen and (max-width: 767px) {
         height: 50%;
         justify-self: end;
         align-items: flex-end;
 
       }
-
-      // @media screen and (max-device-width: 932px) and (orientation: landscape){
-      //   position: inherit;
-      // }
 
       p {
         color: $text_grey2;
@@ -1088,9 +1027,7 @@ input[type=radio] {
 
       @media screen and (max-width: 767px),
       screen and (max-device-width: 932px) and (orientation: landscape) {
-        // flex-direction: column;
         font-size: 14px;
-        // border: 1px solid #f00;
 
         p {
           order: 2;
@@ -1119,7 +1056,4 @@ input[type=radio] {
 
     }
   }
-
-
-
 }
