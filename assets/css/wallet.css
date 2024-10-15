@@ -547,7 +547,6 @@ input[type=radio]:checked::after {
 @media (max-width: 1199.98px) {
   #apiWallet .container .tab_container {
     padding: 2.5% 4%;
-    height: auto;
     -webkit-border-radius: 40px;
     -moz-border-radius: 40px;
     -ms-border-radius: 40px;
@@ -556,7 +555,6 @@ input[type=radio]:checked::after {
 }
 @media (max-width: 991.98px) {
   #apiWallet .container .tab_container {
-    padding: 4%;
     -webkit-border-radius: 30px;
     -moz-border-radius: 30px;
     -ms-border-radius: 30px;

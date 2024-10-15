@@ -622,12 +622,11 @@ input[type=radio] {
 
       @include breakpoint('lg', 'max') {
         padding: 2.5% 4%;
-        height: auto;
         @include border-radius(40px);
       }
 
       @include breakpoint('md', 'max') {
-        padding: 4%;
+        // padding: 3% 4%;
         @include border-radius(30px);
 
       }
