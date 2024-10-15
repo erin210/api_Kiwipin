@@ -938,7 +938,10 @@ input[type=radio] {
 
     .form_list {
       margin-top: 5%;
-      color: $text_grey2;
+      color: $logo_grey;
+      span{
+        font-weight: 300;
+      }
 
       h4 {
         font-size: 22px;

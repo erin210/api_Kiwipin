@@ -827,7 +827,10 @@ input[type=radio]:checked::after {
 }
 #apiWallet .form-payment .form_list {
   margin-top: 5%;
-  color: #A5A5A5;
+  color: #727171;
+}
+#apiWallet .form-payment .form_list span {
+  font-weight: 300;
 }
 #apiWallet .form-payment .form_list h4 {
   font-size: 22px;
