@@ -543,6 +543,11 @@ input[type=radio]:checked::after {
     border-radius: 10px;
   }
 }
+@media screen and (max-width: 767px) {
+  #apiWallet .container .tab_container .tab_content {
+    height: 100%;
+  }
+}
 @media screen and (max-device-width: 932px) and (orientation: landscape) {
   #apiWallet .container .tab_container {
     margin-bottom: 30px;
@@ -735,6 +740,7 @@ input[type=radio]:checked::after {
   #apiWallet .form-payment {
     justify-content: flex-start;
     min-height: inherit;
+    height: 100%;
   }
 }
 #apiWallet .form-payment .point_info {
@@ -854,6 +860,13 @@ input[type=radio]:checked::after {
   text-align: right;
   font-size: 18px;
   margin-top: 4.5vw;
+}
+@media screen and (max-width: 767px) {
+  #apiWallet .form-payment .form_bt {
+    height: 50%;
+    justify-self: end;
+    align-items: flex-end;
+  }
 }
 #apiWallet .form-payment .form_bt p {
   color: #A5A5A5;
