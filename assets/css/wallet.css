@@ -508,7 +508,7 @@ input[type=radio]:checked::after {
     width: 60px;
     height: 60px;
     background-color: #000000;
-    border-radius: 30px;
+    border-radius: 27px;
   }
   #apiWallet .container aside .tabs div.tab.active i.oo1 {
     top: inherit;
