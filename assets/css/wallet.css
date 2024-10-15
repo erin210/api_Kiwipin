@@ -323,6 +323,16 @@ input[type=radio]:checked::after {
   max-width: 100%;
   height: auto;
 }
+@media (max-width: 1199.98px) {
+  #apiWallet .container aside .logo {
+    padding: 15px 40px;
+  }
+}
+@media (max-width: 991.98px) {
+  #apiWallet .container aside .logo {
+    padding: 15px 30px;
+  }
+}
 @media screen and (max-width: 767px) {
   #apiWallet .container aside .logo {
     margin-top: 50px;
@@ -525,13 +535,24 @@ input[type=radio]:checked::after {
 #apiWallet .container .tab_container {
   flex-grow: 1;
   width: 74%;
-  padding: 5%;
+  height: 95vh;
+  padding: 3.5% 5%;
   background-color: #F8F8F6;
   box-sizing: border-box;
   -webkit-border-radius: 50px;
   -moz-border-radius: 50px;
   -ms-border-radius: 50px;
   border-radius: 50px;
+}
+@media (max-width: 1199.98px) {
+  #apiWallet .container .tab_container {
+    padding: 2.5% 4%;
+    height: auto;
+    -webkit-border-radius: 40px;
+    -moz-border-radius: 40px;
+    -ms-border-radius: 40px;
+    border-radius: 40px;
+  }
 }
 @media (max-width: 991.98px) {
   #apiWallet .container .tab_container {
@@ -813,40 +834,15 @@ input[type=radio]:checked::after {
   color: #000000;
   margin-bottom: 5%;
 }
-#apiWallet .form-payment .form_list span {
-  font-size: 18px;
+#apiWallet .form-payment .form_list .check_code {
+  min-height: 150px;
 }
-#apiWallet .form-payment .form_list span.wrong_msg {
-  font-size: 14px;
-  font-weight: normal;
-}
-@media screen and (max-device-width: 932px) and (orientation: landscape) {
-  #apiWallet .form-payment .form_list span {
-    -webkit-text-size-adjust: none;
-    text-size-adjust: none;
-    font-size: 14px;
+@media (max-width: 1199.98px) {
+  #apiWallet .form-payment .form_list {
+    margin-top: 2%;
   }
-}
-#apiWallet .form-payment .form_list .code_PW {
-  position: relative;
-}
-#apiWallet .form-payment .form_list .code_PW input {
-  padding-right: 30px;
-}
-#apiWallet .form-payment .form_list .code_PW img {
-  position: absolute;
-  right: 10px;
-  top: 60%;
-  width: 30px;
-  height: 30px;
-  transform: translateY(-50%);
-  cursor: pointer;
-  display: block;
-}
-@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
-  #apiWallet .form-payment .form_list .code_PW img {
-    width: 20px;
-    height: 20px;
+  #apiWallet .form-payment .form_list h4 {
+    margin-bottom: 3%;
   }
 }
 @media (max-width: 991.98px) {
@@ -869,6 +865,45 @@ input[type=radio]:checked::after {
   #apiWallet .form-payment .form_list span {
     font-size: 14px;
   }
+  #apiWallet .form-payment .form_list .check_code {
+    min-height: inherit;
+  }
+}
+#apiWallet .form-payment span {
+  font-size: 18px;
+}
+#apiWallet .form-payment span.wrong_msg {
+  font-size: 14px;
+  font-weight: normal;
+}
+@media screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment span {
+    -webkit-text-size-adjust: none;
+    text-size-adjust: none;
+    font-size: 14px;
+  }
+}
+#apiWallet .form-payment .code_PW {
+  position: relative;
+}
+#apiWallet .form-payment .code_PW input {
+  padding-right: 30px;
+}
+#apiWallet .form-payment .code_PW img {
+  position: absolute;
+  right: 10px;
+  top: 60%;
+  width: 30px;
+  height: 30px;
+  transform: translateY(-50%);
+  cursor: pointer;
+  display: block;
+}
+@media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  #apiWallet .form-payment .code_PW img {
+    width: 20px;
+    height: 20px;
+  }
 }
 #apiWallet .form-payment .form_bt {
   display: flex;
@@ -876,12 +911,6 @@ input[type=radio]:checked::after {
   align-items: center;
   text-align: right;
   font-size: 18px;
-  margin-top: 4.5vw;
-}
-@media (max-width: 991.98px) {
-  #apiWallet .form-payment .form_bt {
-    margin-top: 3%;
-  }
 }
 @media screen and (max-width: 767px) {
   #apiWallet .form-payment .form_bt {

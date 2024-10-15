@@ -16,10 +16,11 @@ body {
     justify-content: center;
     align-items: center;
 
-    @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+    @media screen and (max-width: 767px),
+    screen and (max-device-width: 932px) and (orientation: landscape) {
       display: block;
     }
-    
+
   }
 }
 
@@ -74,7 +75,8 @@ select {
     color: $light_grey3;
   }
 
-  @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  @media screen and (max-width: 767px),
+  screen and (max-device-width: 932px) and (orientation: landscape) {
     font-size: 12px;
   }
 }
@@ -87,15 +89,17 @@ input:disabled {
   background-color: $light_grey4;
   border: 0;
 }
+
 // input:focus{
 //   border: 1px solid $error;
 // }
 
-small{
-  .icon{
+small {
+  .icon {
     vertical-align: middle;
   }
 }
+
 .text_visible {
   position: relative;
 }
@@ -115,7 +119,8 @@ small{
   display: flex;
   align-items: center;
 
-  @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  @media screen and (max-width: 767px),
+  screen and (max-device-width: 932px) and (orientation: landscape) {
     font-size: 14px;
   }
 }
@@ -245,7 +250,8 @@ input[type=radio] {
     // opacity: .7;
   }
 
-  @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  @media screen and (max-width: 767px),
+  screen and (max-device-width: 932px) and (orientation: landscape) {
     font-size: 14px;
   }
 
@@ -268,7 +274,8 @@ input[type=radio] {
     padding-left: 0;
   }
 
-  @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+  @media screen and (max-width: 767px),
+  screen and (max-device-width: 932px) and (orientation: landscape) {
     display: block;
   }
 
@@ -299,7 +306,8 @@ input[type=radio] {
       max-width: 100%;
       padding-top: 20px;
     }
-    @media screen and (max-width: 767px){
+
+    @media screen and (max-width: 767px) {
       max-width: 100%;
       height: calc(100vh - 30px);
       overflow-y: auto;
@@ -308,6 +316,7 @@ input[type=radio] {
       padding: 0 15px;
       padding-top: 20px;
     }
+
     @media screen and (max-device-width: 932px) and (orientation: landscape) {
       max-width: 100%;
       height: 100%;
@@ -327,11 +336,14 @@ input[type=radio] {
     aside {
       position: relative;
       width: 26%;
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         position: inherit;
         width: 100%;
         // height: calc(150px + 87px);
       }
+
       .logo {
         z-index: 9;
         display: block;
@@ -340,26 +352,39 @@ input[type=radio] {
         padding-top: 50px;
         text-align: center;
         box-sizing: border-box;
+
         img {
           max-width: 100%;
           height: auto;
           // display: block;
         }
-        @media screen and (max-width: 767px){
+
+        @include breakpoint('lg', 'max') {
+          padding: 15px 40px;
+        }
+
+        @include breakpoint('md', 'max') {
+          padding: 15px 30px;
+        }
+
+        @media screen and (max-width: 767px) {
           margin-top: 50px;
           padding-top: 0;
-          img{
+
+          img {
             max-width: 127px;
             margin-left: auto;
             margin-right: auto;
 
           }
         }
-        @media screen and (max-device-width: 932px) and (orientation: landscape){
+
+        @media screen and (max-device-width: 932px) and (orientation: landscape) {
 
           margin-top: 30px;
           padding-top: 0;
-          img{
+
+          img {
             max-width: 17%;
             margin-left: auto;
             margin-right: auto;
@@ -379,16 +404,20 @@ input[type=radio] {
         font-weight: 400;
         color: $text_grey2;
         box-sizing: border-box;
-        @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+        @media screen and (max-width: 767px),
+        screen and (max-device-width: 932px) and (orientation: landscape) {
           flex-direction: row;
           justify-content: flex-start;
           margin-top: 10px;
           padding: 0 15vw;
         }
+
         @media screen and (max-device-width: 932px) and (orientation: landscape) {
           font-size: 18px;
           // margin-bottom: 20px;
         }
+
         div.tab {
           position: relative;
           display: flex;
@@ -400,7 +429,9 @@ input[type=radio] {
           border-radius: 50px 0 0 50px;
           cursor: pointer;
           box-sizing: border-box;
-          @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+          @media screen and (max-width: 767px),
+          screen and (max-device-width: 932px) and (orientation: landscape) {
             width: auto;
             // justify-content: flex-end;
             padding: 1.5em;
@@ -410,15 +441,18 @@ input[type=radio] {
             font-size: 14px;
             border-radius: 50px 50px 0 0;
             // border: 1px solid #f00;
-                  border-bottom: 2px solid $bg_grey;
+            border-bottom: 2px solid $bg_grey;
           }
 
           h3 {
             font-weight: 400;
             color: $white;
-            @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+            @media screen and (max-width: 767px),
+            screen and (max-device-width: 932px) and (orientation: landscape) {
               font-weight: 600;
-              span{
+
+              span {
                 display: none;
               }
             }
@@ -427,46 +461,56 @@ input[type=radio] {
 
           .imgbox {
             margin-right: 1.5em;
-            img{
+
+            img {
               width: 100%;
               filter: invert(100%);
             }
-            @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+            @media screen and (max-width: 767px),
+            screen and (max-device-width: 932px) and (orientation: landscape) {
               width: 18px !important;
               margin-right: 0;
               font-size: 1px;
               // @include shadow_stroke(0.5px, -0.5px, $dark);
               background: url(#{$img-path}icon_add_m.svg)no-repeat center center;
               background-size: cover;
-              img{
+
+              img {
                 opacity: 0;
               }
             }
           }
 
-          i{
+          i {
             display: none;
           }
 
           &.active {
             position: relative;
             background-color: $bg_grey;
+
             h3 {
               color: $dark;
             }
+
             .imgbox {
               align-self: center;
               display: block;
+
               img {
                 width: 100%;
                 filter: inherit;
               }
-              @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+              @media screen and (max-width: 767px),
+              screen and (max-device-width: 932px) and (orientation: landscape) {
                 width: 14px;
                 margin-right: 0;
               }
             }
-            i{
+
+            i {
               display: block;
               position: absolute;
               right: 0;
@@ -477,7 +521,8 @@ input[type=radio] {
               display: block;
               overflow: hidden;
               border-right: 1px solid $bg_grey;
-              &::before{
+
+              &::before {
                 content: "";
                 position: absolute;
                 left: -50px;
@@ -486,18 +531,23 @@ input[type=radio] {
                 background-color: $dark;
                 border-radius: 50px;
               }
-              &.oo1{
-                top:-50px;
+
+              &.oo1 {
+                top: -50px;
                 border-bottom: 1px solid $bg_grey;
-                &::before{
-                  top:-50px;
+
+                &::before {
+                  top: -50px;
                 }
               }
-              &.oo2{
-                bottom:-50px;
+
+              &.oo2 {
+                bottom: -50px;
                 border-top: 1px solid $bg_grey;
               }
-              @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+              @media screen and (max-width: 767px),
+              screen and (max-device-width: 932px) and (orientation: landscape) {
                 display: block;
                 position: absolute;
                 // bottom: 0;
@@ -508,7 +558,8 @@ input[type=radio] {
                 // border: 1px solid #f00;
                 display: block;
                 overflow: hidden;
-                &::before{
+
+                &::before {
                   content: "";
                   position: absolute;
                   left: -30px;
@@ -517,41 +568,45 @@ input[type=radio] {
                   background-color: $dark;
                   border-radius: 30px;
                 }
-                &.oo1{
+
+                &.oo1 {
                   top: inherit;
-                  left:-30px;
+                  left: -30px;
                   bottom: -7px;
                   border-right: 2px solid $bg_grey;
                   border-bottom: 2px solid $bg_grey;
-                  &::before{
+
+                  &::before {
                     top: -35px;
                     // bottom:-30px;
                   }
                 }
-                &.oo2{
+
+                &.oo2 {
                   bottom: -2px;
-                  right:-30px;
+                  right: -30px;
                   border-top: 0;
                   border-right: 0;
                   border-left: 2px solid $bg_grey;
                   border-bottom: 2px solid $bg_grey;
-                  &::before{
-                    top:-30px;
+
+                  &::before {
+                    top: -30px;
                     left: 0;
                   }
                 }
               }
 
             }
-            
-          }
-          
-        }
-        
 
-        
+          }
+
+        }
+
+
+
       }
-      
+
 
     }
 
@@ -559,31 +614,43 @@ input[type=radio] {
       // display: flex;
       flex-grow: 1;
       width: 74%;
-      // height: 95vh;
-      padding: 5%;
+      height: 95vh;
+      padding: 3.5% 5%;
       background-color: $bg_grey;
       box-sizing: border-box;
       @include border-radius(50px);
-      @include breakpoint('md', 'max'){
+
+      @include breakpoint('lg', 'max') {
+        padding: 2.5% 4%;
+        height: auto;
+        @include border-radius(40px);
+      }
+
+      @include breakpoint('md', 'max') {
         padding: 4%;
         @include border-radius(30px);
 
       }
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         width: 100%;
         padding: 20px;
         @include border-radius(10px);
       }
-      @media screen and (max-width: 767px){
-        .tab_content{
+
+      @media screen and (max-width: 767px) {
+        .tab_content {
           height: 100%;
         }
       }
-      @media screen and (max-device-width: 932px) and (orientation: landscape){
-        margin-bottom:30px;
+
+      @media screen and (max-device-width: 932px) and (orientation: landscape) {
+        margin-bottom: 30px;
         height: auto;
       }
-      .loginBar{
+
+      .loginBar {
         width: 100%;
         position: relative;
         right: 0;
@@ -593,22 +660,26 @@ input[type=radio] {
         margin-bottom: 1em;
         padding-bottom: 1em;
         border-bottom: 1px solid $light_grey3;
-        .imgbox{
+
+        .imgbox {
           width: 2em;
           margin-right: .5em;
-          img{
+
+          img {
             max-width: 100%;
             height: auto;
           }
         }
-        @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+        @media screen and (max-width: 767px),
+        screen and (max-device-width: 932px) and (orientation: landscape) {
           position: absolute;
           top: 0;
           right: 0;
           width: 100%;
           color: $bg_grey;
           background-color: #252424;
-          border-radius:0 0 10px 10px;
+          border-radius: 0 0 10px 10px;
           border: 0;
           padding: .5em 1em;
           font-size: 12px;
@@ -616,10 +687,11 @@ input[type=radio] {
 
         }
       }
-      
+
 
     }
-    .email_info{
+
+    .email_info {
       width: 24%;
       // border: 1px solid #f00;
       position: absolute;
@@ -630,14 +702,17 @@ input[type=radio] {
       font-size: 1.2rem;
       font-weight: 200;
       box-sizing: border-box;
-      @include breakpoint('lg', 'max'){
+
+      @include breakpoint('lg', 'max') {
         left: 40px;
         width: 24%;
         padding-right: 2em;
         font-size: .8rem;
 
       }
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape){
+
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         position: fixed;
         left: 0;
         z-index: 99 !important;
@@ -648,13 +723,13 @@ input[type=radio] {
         padding-top: .5em;
         padding-bottom: .8em;
         padding-right: 0;
-        
+
         // padding: 3px 0;
         background-color: $dark;
         box-sizing: border-box;
         display: block;
       }
-      
+
     }
 
 
@@ -703,7 +778,8 @@ input[type=radio] {
     .result_info {
       margin: 70px 0;
 
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         margin: 10vw 0;
       }
 
@@ -747,7 +823,8 @@ input[type=radio] {
 
           }
 
-          @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+          @media screen and (max-width: 767px),
+          screen and (max-device-width: 932px) and (orientation: landscape) {
             font-size: 14px;
           }
 
@@ -800,7 +877,8 @@ input[type=radio] {
     justify-content: space-between;
     // min-height: 51vh;
 
-    @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+    @media screen and (max-width: 767px),
+    screen and (max-device-width: 932px) and (orientation: landscape) {
       justify-content: flex-start;
       min-height: inherit;
       height: 100%;
@@ -815,7 +893,8 @@ input[type=radio] {
       text-align: center;
       @include border-radius(10px);
 
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         padding: 25px;
         @include border-radius(5px);
       }
@@ -831,13 +910,11 @@ input[type=radio] {
           color: var(--primary);
           margin-right: 8px;
           letter-spacing: -0.02em;
-
-
         }
 
-        @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+        @media screen and (max-width: 767px),
+        screen and (max-device-width: 932px) and (orientation: landscape) {
           font-size: 14px;
-
           span {
             font-size: 38px;
           }
@@ -850,77 +927,110 @@ input[type=radio] {
         color: $logo_grey;
         margin-top: .8em;
 
-        @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+        @media screen and (max-width: 767px),
+        screen and (max-device-width: 932px) and (orientation: landscape) {
           font-size: 14px;
         }
       }
     }
+
     .form_list {
       margin-top: 5%;
       color: $text_grey2;
-      h4{
+
+      h4 {
         font-size: 22px;
         color: $dark;
         margin-bottom: 5%;
       }
-      span {
-        font-size: 18px;
 
-        &.wrong_msg {
-          font-size: 14px;
-          font-weight: normal;
-        }
-        
+      .check_code {
+        min-height: 150px;
+      }
 
-        @media screen and (max-device-width: 932px) and (orientation: landscape) {
-          -webkit-text-size-adjust: none;
-          text-size-adjust: none;
-          font-size: 14px;
-        }
-      }
-      .code_PW{
-        position: relative;
-        input{
-          padding-right: 30px;
-        }
-        img{
-          position: absolute;
-          right: 10px;
-          top: 60%;
-          width: 30px;
-          height: 30px;
-          transform: translateY(-50%);
-          cursor: pointer;
-          display: block;
-          @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
-            
-          width: 20px;
-          height: 20px;
-          }
-        }
-        
-      }
-      @include breakpoint('md', 'max'){
-        margin-top: 3%;
-        h4{
+      @include breakpoint('lg', 'max') {
+        margin-top: 2%;
+
+        h4 {
           margin-bottom: 3%;
         }
 
       }
 
+      @include breakpoint('md', 'max') {
+        margin-top: 3%;
 
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+        h4 {
+          margin-bottom: 3%;
+        }
+      }
+
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         margin-top: 10px;
-        h4{
+
+        h4 {
           font-size: 18px;
           color: $dark;
           margin-bottom: 20px;
         }
+
         span {
           font-size: 14px;
         }
+
+        .check_code {
+          min-height: inherit;
+        }
       }
     }
+
+    span {
+      font-size: 18px;
+
+      &.wrong_msg {
+        font-size: 14px;
+        font-weight: normal;
+      }
+
+
+      @media screen and (max-device-width: 932px) and (orientation: landscape) {
+        -webkit-text-size-adjust: none;
+        text-size-adjust: none;
+        font-size: 14px;
+      }
+    }
+
+    .code_PW {
+      position: relative;
+
+      input {
+        padding-right: 30px;
+      }
+
+      img {
+        position: absolute;
+        right: 10px;
+        top: 60%;
+        width: 30px;
+        height: 30px;
+        transform: translateY(-50%);
+        cursor: pointer;
+        display: block;
+
+        @media screen and (max-width: 767px),
+        screen and (max-device-width: 932px) and (orientation: landscape) {
+
+          width: 20px;
+          height: 20px;
+        }
+      }
+
+    }
+
+
+
+
 
     .form_bt {
       display: flex;
@@ -928,28 +1038,31 @@ input[type=radio] {
       align-items: center;
       text-align: right;
       font-size: 18px;
-      margin-top: 4.5vw;
-      // margin-bottom: 8vw;
-      @include breakpoint('md', 'max'){
-        margin-top: 3%;
 
+      // margin-top: 4.5vw;
+      // margin-bottom: 8vw;
+      @include breakpoint('md', 'max') {
+        // margin-top: 3%;
       }
 
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         // position: fixed;
         // position: absolute;
         // left: 0;
         // right: 5vw;
         // bottom: 7vw;
-      // margin-top: 5%;
+        // margin-top: 5%;
         // width: 100%;
       }
-      @media screen and (max-width: 767px){
-       height: 50%;
-       justify-self: end;
-       align-items: flex-end;
+
+      @media screen and (max-width: 767px) {
+        height: 50%;
+        justify-self: end;
+        align-items: flex-end;
 
       }
+
       // @media screen and (max-device-width: 932px) and (orientation: landscape){
       //   position: inherit;
       // }
@@ -968,7 +1081,8 @@ input[type=radio] {
 
       }
 
-      @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
+      @media screen and (max-width: 767px),
+      screen and (max-device-width: 932px) and (orientation: landscape) {
         // flex-direction: column;
         font-size: 14px;
         // border: 1px solid #f00;

@@ -213,7 +213,7 @@
                 return false;
             }
             if (!IsPincode($('#U_PINCODE').val())) {
-                $('.pincode_msg_text').text("無效的儲值密碼");
+                $('.pincode_msg_text').html('<i class="icon"><img src="./assets/img/icon_error.svg"></i>無效的儲值密碼');
                 $('.pincode_msg').show();
                 $('#U_PINCODE').focus().attr('aria-invalid', 'true').addClass('input_error');
                 $('#U_PINCODE');
