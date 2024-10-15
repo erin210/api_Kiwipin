@@ -15,6 +15,10 @@ const environment = {
       pageBaseUrl: 'http://127.0.0.1:5502/',
       apiBaseUrl: 'http://127.0.0.1:5502/',
     },
+    localhosthome: {
+      pageBaseUrl: 'http://192.168.8.224:5502/',
+      apiBaseUrl: 'http://192.168.8.224:5502/',
+    },
   };
   
   //配置
@@ -26,6 +30,8 @@ const environment = {
       return environment.stage;
     }else if (hostname === 'erin210.github.io') {
       return environment.github;
+    }else if (hostname === '192.168.8.224') {
+      return environment.localhosthome;
     } else {
       return environment.localhost;
     }

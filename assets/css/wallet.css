@@ -25,6 +25,7 @@ body.walletBody {
 @media screen and (max-width: 767px), screen and (max-device-width: 932px) and (orientation: landscape) {
   body.walletBody {
     display: block;
+    min-height: 100dvh;
   }
 }
 
@@ -276,7 +277,7 @@ input[type=radio]:checked::after {
 @media screen and (max-width: 767px) {
   #apiWallet .container {
     max-width: 100%;
-    height: calc(100vh - 30px);
+    height: calc(100dvh - 30px);
     overflow-y: auto;
     flex-direction: column;
     justify-content: flex-start;
@@ -370,7 +371,7 @@ input[type=radio]:checked::after {
   #apiWallet .container aside .tabs {
     flex-direction: row;
     justify-content: flex-start;
-    margin-top: 10px;
+    margin-top: 0;
     padding: 0 15vw;
   }
 }
