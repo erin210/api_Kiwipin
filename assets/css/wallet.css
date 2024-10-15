@@ -574,7 +574,7 @@ input[type=radio]:checked::after {
 }
 @media screen and (max-width: 767px) {
   #apiWallet .container .tab_container .tab_content {
-    height: 100%;
+    height: calc(100% - env(safe-area-inset-bottom));
   }
 }
 @media screen and (max-device-width: 932px) and (orientation: landscape) {
